@@ -1,0 +1,195 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$rdas-primary: (
+    50 : #f4f7fb,
+    100 : #e3ecf6,
+    200 : #d0e0f0,
+    300 : #bdd3e9,
+    400 : #aec9e5,
+    500 : #a0c0e0,
+    600 : #98badc,
+    700 : #8eb2d8,
+    800 : #84aad3,
+    900 : #739ccb,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #e2efff,
+    A700 : #c9e2ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    ),
+);
+
+$rdas-secondary: (
+  50 : #e1e5e9,
+  100 : #b5bfc8,
+  200 : #8494a4,
+  300 : #52697f,
+  400 : #2d4863,
+  500 : #082848,
+  600 : #072441,
+  700 : #061e38,
+  800 : #041830,
+  900 : #020f21,
+  A100 : #5d8eff,
+  A200 : #2a6aff,
+  A400 : #004af6,
+  A700 : #0042dd,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #ffffff,
+      400 : #ffffff,
+      500 : #ffffff,
+      600 : #ffffff,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #ffffff,
+      A400 : #ffffff,
+      A700 : #ffffff,
+  ),
+);
+
+$rdas-warn: (
+  50: #fcebe9,
+  100: #f7ccc9,
+  200: #f1aaa5,
+  300: #eb8881,
+  400: #e76f66,
+  500: #e3554b,
+  600: #e04e44,
+  700: #dc443b,
+  800: #d83b33,
+  900: #d02a23,
+  A100: #ffffff,
+  A200: #ffd9d8,
+  A400: #ffa8a5,
+  A700: #ff8f8b,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$md-0f294d: (
+    50 : #e2e5ea,
+    100 : #b7bfca,
+    200 : #8794a6,
+    300 : #576982,
+    400 : #334968,
+    500 : #0f294d,
+    600 : #0d2446,
+    700 : #0b1f3d,
+    800 : #081934,
+    900 : #040f25,
+    A100 : #608aff,
+    A200 : #2d64ff,
+    A400 : #0041f9,
+    A700 : #003ae0,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$md-0f294d2: (
+    50 : #e6e8ec,
+    100 : #c0c6cf,
+    200 : #97a1b0,
+    300 : #6d7b90,
+    400 : #4d5e78,
+    500 : #2e4260,
+    600 : #293c58,
+    700 : #23334e,
+    800 : #1d2b44,
+    900 : #121d33,
+    A100 : #729fff,
+    A200 : #3f7dff,
+    A400 : #0c5aff,
+    A700 : #004ef1,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$app-primary: mat.define-palette($md-0f294d);
+$app-accent: mat.define-palette($rdas-secondary);
+
+// The "warn" palette is optional and defaults to red if not specified.
+$app-warn: mat.define-palette($rdas-warn);
+
+$app-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $app-primary,
+      accent: $app-accent,
+      warn: $app-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+@include mat.all-component-themes($app-theme);

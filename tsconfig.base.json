@@ -163,11 +163,18 @@
       "adme-store": ["libs/stores/adme-store/src/index.ts"],
       "chemkit": ["libs/features/ifx/chemkit/src/index.ts"],
       "default-tool": ["libs/features/ifx/default-tool/src/index.ts"],
+      "features/gsrs/gsrs-about/gsrs-about": [
+        "libs/features/gsrs/gsrs-about/gsrs-about/src/index.ts"
+      ],
       "filter-chip-list": ["libs/shared/utils/filter-chip-list/src/index.ts"],
       "filter-download-button": [
         "libs/shared/utils/filter-download-button/src/index.ts"
       ],
       "generic-chart": ["libs/shared/utils/charts/generic-chart/src/index.ts"],
+      "gsrs-about": ["libs/features/gsrs/gsrs-about/src/index.ts"],
+      "gsrs-api": ["libs/features/gsrs/gsrs-api/src/index.ts"],
+      "gsrs-downloads": ["libs/features/gsrs/gsrs-downloads/src/index.ts"],
+      "gsrs-home": ["libs/features/gsrs/gsrs-home/src/index.ts"],
       "@ncats-frontend-library/features/rdas/history-api": ["libs/features/rdas/history-api/src/index.ts"],
       "ifx": ["libs/models/ifx/src/index.ts"],
       "ifx-tool-store": ["libs/stores/ifx-tool-store/src/index.ts"],

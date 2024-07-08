@@ -1,0 +1,144 @@
+<mat-sidenav
+#navigationsidenav
+class="navigation-menu-panel"
+[opened]="!mobile"
+[mode]="'side'"
+>
+<div class="toc-wrapper" cdkScrollable>
+<div class="toc">
+  <div class="row right-justified-row">
+    <button
+      [color]="'primary'"
+      mat-icon-button
+      class="close-button"
+      aria-label="close filters"
+      (click)="navigationsidenav.toggle()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <mat-nav-list>
+    <a
+      mat-list-item
+      class="list-button"
+      (click)="scroll(releases)"
+      [ngClass]="{ 'active-sidemenu': isActive('releases') }"
+    >
+      Releases
+    </a>
+    <a
+      mat-list-item
+      class="list-button"
+      (click)="scroll(other)"
+      [ngClass]="{ 'active-sidemenu': isActive('other') }"
+    >
+      Other Downloads
+    </a>
+    <!-- <a
+       mat-list-item
+       class="list-button"
+       (click)="scroll(license)"
+       [ngClass]="{ 'active-sidemenu': isActive('license') }"
+     >
+       License
+     </a>-->
+  </mat-nav-list>
+</div>
+</div>
+</mat-sidenav>
+
+
+<div class="row centered-row" id="releases" #releases #scrollSection>
+    <div class="width-sm-100 width-75">
+      <mat-card class = "rdas-card">
+        <div class="width-50 width-md-80 section-header">
+          Releases
+        </div>
+        <div class="width-50 width-md-80 section-subheader">
+          G-SRS v3.1 (December 14, 2023)
+        </div>
+        <mat-card-content >
+          <div class="width-50 width-md-80 section-content">
+            
+            <br/><br/>
+
+            CHANGELOG
+            <br/><br/>
+            GSRS 3.1 software release is a major release incorporating new features in data exchange, which introduces staging area for importing, user saved lists, and structure rending Improvements in substances module. A document containing an in-depth description of the highlighted features and bug fixes / improvements and more can be downloaded Here
+New Feature And Enhancement Highlights
+<br/><br/>
+
+Full Release Highlights / Notes
+<ul>
+  <li>Data Exchange - file import (ETL Framework)
+  </li>
+  <li>Bulk User saved lists
+  </li>
+  <li>New features and Improvements in Product, Application, Clinical Trials, Impurities modules
+  </li>
+  <li>structure rendering improvements
+  </li>
+  <li>Quick Registration Tools
+  </li>
+  <li>Developer SOP for database schema changes
+  </li>
+  <li>ASCII / markup name support
+  </li>
+  <li>Notes and validation message rework and custom styling
+  </li>
+  <li>Impurities and produckt module improvements
+  </li>
+  <li>Updated, refined, and refactored definitional hash algorithm
+  </li>
+  <li>Structure search quality of life improvements
+  </li>
+</ul>
+
+
+  </div>
+  <div class="width-50 width-md-80 section-subheader">
+    Installation Instructions
+    </div>
+    <div class="width-50 width-md-80 section-content">
+      
+    The GSRS version 3.1 can be found cloned locally using
+
+    <br/><br/><code>git clone https://github.com/ncats/gsrs3-main-deployment</code><br/><br/>
+
+    Follow the repository readme here for full instructions
+    <br/><br/>
+  </div>
+
+  <div class="width-50 width-md-80 section-subheader">
+    Questions
+    </div>
+    <div class="width-50 width-md-80 section-content">
+      
+      Have a deployment related question? First, be sure to check our Github Wiki Page. Couldn't find the answer? Send us an email and we will respond as soon as possible. GSRS Team
+
+    <br/><br/>
+  </div>
+
+
+
+
+
+    </mat-card-content>
+    </mat-card>
+    <mat-card class = "rdas-card">
+      <div class="width-50 width-md-80 section-header" id="other" #other #scrollSection>
+        Other Downloads
+      </div>
+      <div class="width-50 width-md-80 section-content">
+        <br/><br/>
+        <ul>
+          <li>  <a target="_self" href = "./downloads/GinasExcelTools.zip" download = "GinasExcelTools.zip">GSRS Excel Tools</a></li>
+          <li>  <a target="_self" href = "./downloads/dump-public-2023-12-14.gsrs.gsrs" download = "dump-public-2023-09-14.gsrs">Full Public Data Dump (December, 2023)</a></li>
+          <li>  <a target="_self" href = "./downloads/GSRS_data_dictionary_11-29-2023.xlsx" download = "GSRS_data_dictionary_11-29-2023.xlsx">GSRS Data Dictionary (Nov.29,2023)</a></li>
+          <li>  <a target="_self" href = "./downloads/GSRS_schema_2_0_0.json" download = "GSRS_schema_2_0_0.json">GSRS JSON schema (February 22,2022)</a></li>
+          <li>  <a target="_self" href = "./downloads/Substance Registration - October 2019.docx" download = "Substance Registration - October 2019.docx">Substance Registration Guide Working Document</a></li>
+      </ul>
+      </div>
+      </mat-card>
+    </div>
+</div>

@@ -9,6 +9,7 @@ import {
 } from "@angular/core";
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { Router, RouterLink } from '@angular/router';
 import { LoadingSpinnerComponent } from "@ncats-frontend-library/shared/utils/loading-spinner";
 
 @Component({
@@ -20,7 +21,8 @@ import { LoadingSpinnerComponent } from "@ncats-frontend-library/shared/utils/lo
     ScrollingModule,
     CdkScrollableModule,
     NgOptimizedImage,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    RouterLink
   ],
   templateUrl: './gsrs-home.component.html',
   styleUrl: './gsrs-home.component.scss',

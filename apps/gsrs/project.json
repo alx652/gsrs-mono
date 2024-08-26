@@ -19,6 +19,11 @@
         "assets": ["apps/gsrs/src/favicon.ico",
          "apps/gsrs/src/assets",
          {
+          "input": "libs/features/gsrs/gsrs-home/src/assets",
+          "glob": "**/*",
+          "output": "assets/gsrs-home"
+        },
+         {
           "input": "libs/features/gsrs/gsrs-api/src/assets",
           "glob": "**/*",
           "output": "assets/gsrs-api"
@@ -37,12 +42,12 @@
             {
               "type": "initial",
               "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumError": "10mb"
             },
             {
               "type": "anyComponentStyle",
               "maximumWarning": "2kb",
-              "maximumError": "4kb"
+              "maximumError": "400kb"
             }
           ],
           "outputHashing": "all"

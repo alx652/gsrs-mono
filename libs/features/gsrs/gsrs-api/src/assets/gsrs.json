@@ -1582,7 +1582,136 @@
           }
         }
       }
-    }, 
+    },
+    "/substances/@databaseIndexDiff": {
+      "get": {
+        "tags": ["rebackup and reindex"],
+        "summary": "Get the difference between database and indexes",
+        "description": "Returns the ids that exist only in database or in indexes, and the counts.",
+        "parameters": [
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "401": {
+            "description": "Could not find the process"
+          }
+        }
+      }
+    },
+    "/substances/@databaseIndexSync": {
+      "put": {
+        "tags": ["rebackup and reindex"],
+        "summary": "Reindex substances records that are in database, but not in indexes",
+        "description": "Returns the id this async job.",
+        "parameters": [
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "401": {
+            "description": "Could not find the process"
+          }
+        }
+      }
+    },
+    "/substances/@databaseIndexSync({id})": {
+      "get": {
+        "tags": ["rebackup and reindex"],
+        "summary": "Get the reindex job status.",
+        "description": "Returns the reindex job status.",
+        "parameters": [
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "404": {
+            "description": "Could not find the job identified by id"
+          }
+        }
+      }
+    },
+    "/substances/({id})/@rebackup": {
+      "get": {
+        "tags": ["rebackup and reindex"],
+        "summary": "Rebackup the record specified by id.",
+        "description": "Returns the record rebacked.",
+        "parameters": [
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "404": {
+            "description": "Could not find the record identified by id"
+          }
+        }
+      }
+    },
+    "/substances/@rebackup": {
+      "put": {
+        "tags": ["rebackup and reindex"],
+        "summary": "Rebackup the records specified by the list of ids.",
+        "description": " ",
+        "parameters": [
+          {
+          "type":"array",
+          "items":{
+            "type":"string"
+          },
+          "in": "body",
+          "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/substances/({id})/@rebackupAndReindex": {
+      "get": {
+        "tags": ["rebackup and reindex"],
+        "summary": "Rebackup and reindex the record specified by id.",
+        "description": "Returns the record rebacked and reindexed.",
+        "parameters": [
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "404": {
+            "description": "Could not find the record identified by id"
+          }
+        }
+      }
+    },
+    "/substances/@rebackupAndReindex": {
+      "put": {
+        "tags": ["rebackup and reindex"],
+        "summary": "Rebackup the records specified by the list of ids.",
+        "description": " ",
+        "parameters": [
+          {
+          "type":"array",
+          "items":{
+            "type":"string"
+          },
+          "in": "body",
+          "required": "true"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
     "/scheduledjobs": {
       "get": {
         "tags": [

@@ -110,12 +110,11 @@ $rdas-warn: (
 
 $md-0f294d: (
     50 : #e2e5ea,
-    100 : #b7bfca,
-    200 : #8794a6,
-    300 : #576982,
-    400 : #334968,
-    500 : #0f294d,
-    600 : #0d2446,
+    100 : #8794a6,
+    200 : #576982,
+    300 : #334968,
+    500 : #1B3559,
+    400 : #0d2446,
     700 : #0b1f3d,
     800 : #081934,
     900 : #040f25,
@@ -193,3 +192,7 @@ $app-theme: mat.define-light-theme(
 );
 
 @include mat.all-component-themes($app-theme);
+
+
+$app-link: #1279cf;
+$app-link-visited: #032fa1;

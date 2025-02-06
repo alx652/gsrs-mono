@@ -59,6 +59,11 @@ export class AppComponent {
   activeLink!: string;
   links: LinkTemplateProperty[] = [
     {
+      link: 'https://gsrs.ncats.nih.gov/ginas/app/ui/',
+      label: 'DEMO',
+      external: true
+    },
+    {
       link: 'api',
       label: 'API / DOCUMENTATION',
     },

@@ -31,6 +31,13 @@ lib-gsrs-about {
       margin-top: 5vh;
       margin-bottom: 2vh;
     }
+
+    .section-sub-header {
+      font: 300 1.5rem Roboto, 'Helvetica Neue', sans-serif;
+      padding-left: 1vw;
+      margin-top: 2vh;
+      margin-bottom: 1vh;
+    }
   
     .spacer {
       height: 20vh;
@@ -68,6 +75,13 @@ lib-gsrs-about {
         font: 300 2rem Roboto, 'Helvetica Neue', sans-serif;
         margin-top: 2vh;
       }
+    }
+
+
+    .contributor-header {
+      font: 400 2rem Roboto, "Helvetica Neue", sans-serif;
+    margin-top: 4rem;
+    margin-bottom: 0.5rem;
     }
   }
   

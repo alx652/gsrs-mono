@@ -131,6 +131,9 @@
     padding-top: 5vh;
   }
   
+  .test {
+    background-color: rgb(245, 245, 245);
+  }
   @media only screen and (max-width: 768px) {
     .home-content {
       padding-top: 5vh;
@@ -151,6 +154,8 @@
       font-weight: bold;
       padding: 1rem;
     }
+
+   
   
     .rdas-subheadline {
       font-size: 1.3rem;
@@ -181,4 +186,30 @@
   background-color: mat.get-color-from-palette($app-primary);
   color: #ffffff;
   scroll-margin: 10vh;
+}
+
+
+.home-image {
+  height: auto;
+  width: 100%;
+  margin:10px 0px;
+}
+
+.smaller-bottom-margin {
+  margin-bottom: -25px;
+}
+
+.temp-color {
+  color: #3080C2;
+  font-size: 14pt;
+}
+
+
+.blue-background {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testing {
+ margin-top: 20px;
 }

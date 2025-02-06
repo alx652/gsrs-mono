@@ -1,3 +1,6 @@
+@import '../../../../libs/styles/src/styles/gsrs-theme.scss';
+
+
 lib-gsrs-downloads {
     .about-page {
       margin-top: 1vh;
@@ -36,6 +39,13 @@ lib-gsrs-downloads {
       font: 300 2rem Roboto, 'Helvetica Neue', sans-serif;
       padding-left: 1vw;
       margin-top: 3vh;
+      margin-bottom: 1vh;
+    }
+
+    .section-sub-subheader {
+      font: 300 1.4rem Roboto, 'Helvetica Neue', sans-serif;
+      padding-left: 1vw;
+      margin-top: 1vh;
       margin-bottom: 1vh;
     }
   
@@ -81,5 +91,29 @@ lib-gsrs-downloads {
         margin-top: 2vh;
       }
     }
+
+    .other-list {
+      li { padding-top: 15px;
+            font-size: 14pt;
+      }
+  
+      .other-description {
+      font:  400 1rem / 1.5rem Roboto, "Helvetica Neue", sans-serif;
+      margin-left: 2em;
+      margin-top: .3em;
+      margin-bottom: .5em;
+      }
+  
+    }
+  
+    a {
+      color: $app-link;
+    }
+
+    a:visited {
+      color: $app-link;
   }
   
+}
+
+ 

@@ -1,15 +1,31 @@
 <div class="home-content" cdkScrollable>
   <div class="graph-holder">
     <div class="home-component">
-      <div class="width-50 width-md-80 rdas-headline" style = "color:white">
+      <div class="width-50 width-md-90 rdas-headline" style = "color:white">
           The GSRS project
       </div>
 
-      <div class="width-50 width-md-80 rdas-subheadline">
-          The main goal of GSRS is the production of software, called GSRS, to assist agencies in registering and documenting
+      <div class="width-75 width-md-90 rdas-subheadline">
+         <!--The main goal of GSRS is the production of software, called GSRS, to assist agencies in registering and documenting
            information about substances found in medicines. The Global Ingredient Archival System provides a common identifier
             for all of the substances used in medicinal products, utilizing a consistent definition of substances globally,
-             including active substances under clinical investigation, consistent with the ISO 11238 standard.
+             including active substances under clinical investigation, consistent with the ISO 11238 standard.--> 
+            The Global Substance Registration System (GSRS) enables efficient and accurate exchange of information on substances through their
+             Unique Ingredient Identifiers (UNIIs) which can be generated at any time in the regulatory life cycle.
+             The GSRS defines substances by standardizing scientific descriptions of ingredients (chemical, protein,
+             nucleic acid, polymer, structurally diverse, or mixture) following the guidelines of ISO 11238 and ISO DTS 19844.
+          
+             See more about GSRS below including information on its registration system, access to public data (including data curated by the FDA), as well as 
+             a regulatory workflow .
+             <br/>
+             GSRS was developed through a collaboration between the FDA, NIH's National Center for Advancing Translational Sciences (NCATS),
+             and international partners including EMA, USP, WHO, UMC, BfARM.
+
+
+             
+                <br/><br/>
+
+
       </div>
     </div>
   </div>
@@ -31,12 +47,13 @@
          Registration System
         </div>
         <h3 class="">
-       GSRS is an application For regulatory agencies and research institutions
+       GSRS is an application For regulatory agencies and research institutions to browse, search, and register substances and related data. 
         </h3>
         <div class="">
           <img src = "/assets/gsrs-home/GSRS_home_demo.png" class = "home-image" />
         </div>
         <div class="content">
+          A Demo of the GSRS Software and public dataset can be viewed in the link below.
         </div>
       </mat-card>
       <mat-card class="white-background rdas-card centered">
@@ -47,8 +64,11 @@
          GSRS is a data set of over 160,000 publicly available substance records. Chemistry, associated metabolites, impurities, diseases, etc. 
         </h3>
         <div class="content">
-          <img src = "/assets/gsrs-home/uniiSearch.png" class = "home-image" />
-          <img src = "/assets/gsrs-home/inxight.png" class = "home-image" />
+          FDA's GSRS instance enables efficient and accurate exchange of information on substances through their Unique Ingredient Identifiers (UNIIs) which can be generated at any time in the regulatory life cycle. <a href = "https://precision.fda.gov/uniisearch">UNII Search System.</a>
+          <img src = "/assets/gsrs-home/uniiSearch.png" class = "home-image  smaller-image" />
+          <br/>
+         <div><a href = "https://drugs.ncats.io">Insight Drugs</a> is a comprehensive and curated portal for translational research using the GSRS dataset.</div> 
+          <img src = "/assets/gsrs-home/inxight.png" class = "home-image smaller-image" />
           </div>
       </mat-card>
       <mat-card class="white-background rdas-card centered  test-card">
@@ -56,11 +76,12 @@
           Regulatory Workflow
         </div>
         <h3>
-          Based on ISO1128 standard, GSRS is a regulatory workflow providing consistent definitions of substances globally
+          Based on ISO1128 standard, GSRS is a regulatory workflow providing consistent definitions of substances globally.
         </h3>
         <div class="content">
-          <img src = "/assets/gsrs-home/precisionFDA.png" class = "home-image" />
-          <img src = "/assets/gsrs-home/gsrsCycle.png" class = "home-image" />
+          <a href = "https://precision.fda.gov/">PrecisionFDA</a> Is one platform using GSRS's workflow and software to upload, search and register multi-omics data.
+          <img src = "/assets/gsrs-home/precisionFDA.png" class = "home-image smaller-image" />
+          <img src = "/assets/gsrs-home/gsrsCycle.png" class = "home-image smaller-image" />
           </div>
       </mat-card>
     </div>
@@ -68,12 +89,12 @@
     <div class="grid-wrapper">
       <mat-card class="white-background rdas-card centered  test-card">
         <div class="bottom-border-primary heading-text">
-         View The Demo
+         Public Registration System Demo
         </div>
         <h3 class=""> &nbsp;
         </h3>
         <div class="content">
-          <a href = "https://gsrs.ncats.nih.gov/ginas/app/ui/" class = "temp-color">Public Demo</a>
+          <a href = "https://gsrs.ncats.nih.gov/ginas/app/ui/" class = "temp-color">Try out the GSRS demo here</a>
         </div>
       </mat-card>
       <mat-card class="white-background rdas-card centered">
@@ -84,7 +105,8 @@
           August 8, 2024: 162,731 Records
         </h3>
         <div class="content">
-          <a href = "../../assets/downloads/dump-public-2024-08-29.gsrs" class = "temp-color" download>Download Dataset (.gsrs)</a>
+          <a href = "../../assets/downloads/dump-public-2024-08-29.gsrs" class = "temp-color" download>Download Dataset</a>
+          (Click here to view instructions on how to load and view this data)
           </div>
       </mat-card>
       <mat-card class="white-background rdas-card centered">
@@ -130,6 +152,7 @@
           <span class = "date">  December 15, 2023 </span><br/><br/>
 Presentation: GSRS Public Development Update: December 2023
         </h3>
+        <I>(NOTE: Is there any newer news? Consortium?)</I>
         
       </mat-card>
     </div>

@@ -1,3 +1,5 @@
+@import '../../../../libs/styles/src/styles/gsrs-theme.scss';
+
 lib-gsrs-about {
     .about-page {
       margin-top: 1vh;
@@ -83,5 +85,13 @@ lib-gsrs-about {
     margin-top: 4rem;
     margin-bottom: 0.5rem;
     }
+
+    .text-link {
+      color: $app-link;
+    }
+
+    .text-link:visited {
+      color: $app-link;
+  }
   }
   

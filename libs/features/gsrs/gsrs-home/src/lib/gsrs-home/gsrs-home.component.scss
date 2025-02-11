@@ -4,7 +4,7 @@
 
 .home-content {
     
-  }
+  
 
   .date {
     font-weight: 500;
@@ -82,7 +82,7 @@
   }
   
   .rdas-subheadline {
-    font-size: 2rem;
+    font-size: 1.66rem;
   }
   
   .graph {
@@ -196,7 +196,7 @@
 }
 
 .smaller-bottom-margin {
-  margin-bottom: -25px;
+  margin-bottom: -5px;
 }
 
 .temp-color {
@@ -212,4 +212,10 @@
 
 .testing {
  margin-top: 20px;
+}
+
+.smaller-image {
+  width:75%;
+  margin-left: 12.5%;
+}
 }

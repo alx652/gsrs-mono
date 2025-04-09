@@ -1,4 +1,7 @@
 <div class="home-content" cdkScrollable>
+  <div class = "temp-banner">
+    This repository is under review for potential modification in compliance with Administration directives.
+  </div>
   <div class="graph-holder">
     <div class="home-component">
       <div class="width-50 width-md-90 rdas-headline" style = "color:white">
@@ -29,7 +32,7 @@
       </div>
     </div>
   </div>
-  <a (click)="goToDetails()">
+  <!--<a (click)="goToDetails()">
     <div class="primary-background learn-more">
       <div class="row centered-row no-padding learn-more-text">
        <p>What is GSRS?</p>
@@ -38,8 +41,9 @@
         <mat-icon>expand_more</mat-icon>
       </div>
     </div>
-  </a>
+  </a>-->
   <div #details class="primary-background">
+    <br/><br/><br/>
     @defer(on viewport) {
     <div class="grid-wrapper smaller-bottom-margin">
       <mat-card class="white-background rdas-card centered test-card">
@@ -81,6 +85,7 @@
         <div class="content">
           <a href = "https://precision.fda.gov/">PrecisionFDA</a> Is one platform using GSRS's workflow and software to upload, search and register multi-omics data.
           <img src = "/assets/gsrs-home/precisionFDA.png" class = "home-image smaller-image" />
+          Community-sourced science such as that done through challenges offered by PrecisionFDA advance regulatory standards for bioinformatics, RWD, and AI
           <img src = "/assets/gsrs-home/gsrsCycle.png" class = "home-image smaller-image" />
           </div>
       </mat-card>
@@ -102,11 +107,14 @@
           Download the latest Data Set
         </div>
         <h3 class="">
-          August 8, 2024: 162,731 Records
+          {{releaseDate}}: {{releaseCount}} Records
         </h3>
         <div class="content">
-          <a href = "../../assets/downloads/dump-public-2024-08-29.gsrs" class = "temp-color" download>Download Dataset</a>
-          (Click here to view instructions on how to load and view this data)
+          <a href = "../../assets/downloads/{{releasePath}}" class = "temp-color" download>Download Dataset</a>
+        </div> 
+        <div class="content">
+          (
+            <a href ="https://github.com/ncats/gsrs-ci/blob/gsrs-example-deployment/docs/Data%20Import%20Users%20Guide.docx"> Click here</a> for instructions on how to load this data)
           </div>
       </mat-card>
       <mat-card class="white-background rdas-card centered">
@@ -149,10 +157,9 @@
           Latest News
         </div>
         <h3>
-          <span class = "date">  December 15, 2023 </span><br/><br/>
-Presentation: GSRS Public Development Update: December 2023
+          <span class = "date">  August 29th, 2024 </span><br/><br/>
+GSRS Consortium Round Table
         </h3>
-        <I>(NOTE: Is there any newer news? Consortium?)</I>
         
       </mat-card>
     </div>

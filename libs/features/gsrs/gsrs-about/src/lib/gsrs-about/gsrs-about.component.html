@@ -1,402 +1,623 @@
 <mat-sidenav-container class="about-page" >
-    <mat-sidenav
-      #navigationsidenav
-      class="navigation-menu-panel"
-      [opened]="!mobile"
-      [mode]="'side'"
-    >
-      <div class="toc-wrapper" cdkScrollable>
-      <div class="toc">
-        <div class="row right-justified-row">
-          <button
-            [color]="'primary'"
-            mat-icon-button
-            class="close-button"
-            aria-label="close filters"
-            (click)="navigationsidenav.toggle()"
-          >
-            <mat-icon>close</mat-icon>
-          </button>
-        </div>
-        <mat-nav-list>
-          <a
-            mat-list-item
-            class="list-button"
-            (click)="scroll(about)"
-            [ngClass]="{ 'active-sidemenu': isActive('about') }"
-          >
-            About
-          </a>
-          <a
-            mat-list-item
-            class="list-button"
-            (click)="scroll(citation)"
-            [ngClass]="{ 'active-sidemenu': isActive('citation') }"
-          >
-            Citation
-          </a>
-          <a
-            mat-list-item
-            class="list-button"
-            (click)="scroll(publications)"
-            [ngClass]="{ 'active-sidemenu': isActive('publications') }"
-          >
-            Additional Publications
-          </a>
-          <a
-            mat-list-item
-            class="list-button"
-            (click)="scroll(contact)"
-            [ngClass]="{ 'active-sidemenu': isActive('contact') }"
-          >
-            RDAS Team and Contact
-          </a>
-          <a
-            mat-list-item
-            class="list-button"
-            (click)="scroll(code)"
-            [ngClass]="{ 'active-sidemenu': isActive('code') }"
-          >
-            Code
-          </a>
-          <!-- <a
-             mat-list-item
-             class="list-button"
-             (click)="scroll(license)"
-             [ngClass]="{ 'active-sidemenu': isActive('license') }"
-           >
-             License
-           </a>-->
-        </mat-nav-list>
-      </div>
-    </div>
-    </mat-sidenav>
-    <mat-sidenav-content class="drawer-container-content" >
-      @if (!navigationsidenav.opened) {
-      <div class="row">
+  <mat-sidenav
+    #navigationsidenav
+    class="navigation-menu-panel"
+    [opened]="!mobile"
+    [mode]="'side'"
+  >
+    <div class="toc-wrapper" cdkScrollable>
+    <div class="toc">
+      <div class="row right-justified-row">
         <button
           [color]="'primary'"
-          mat-stroked-button
-          class="menu-button"
-          aria-label="menu button"
+          mat-icon-button
+          class="close-button"
+          aria-label="close filters"
           (click)="navigationsidenav.toggle()"
         >
-          Jump to...<mat-icon>bookmark</mat-icon>
+          <mat-icon>close</mat-icon>
         </button>
       </div>
-      }
-      <div class="row centered-row">
-        <div [ngClass]="{ 'full-width': navigationsidenav.opened, 'width-70': !navigationsidenav.opened }">
-      <div class="row">
-        <div>
-          <h1 class="rdas-title"><b>RDAS</b>: Rare Disease Alert System</h1>
+      <mat-nav-list>
+        <a
+          mat-list-item
+          class="list-button"
+          (click)="scroll(about)"
+          [ngClass]="{ 'active-sidemenu': isActive('about') }"
+        >
+          About
+        </a>
+        <a
+          mat-list-item
+          class="list-button"
+          (click)="scroll(citation)"
+          [ngClass]="{ 'active-sidemenu': isActive('citation') }"
+        >
+          FAQs
+        </a>
+        <a
+          mat-list-item
+          class="list-button"
+          (click)="scroll(contact)"
+          [ngClass]="{ 'active-sidemenu': isActive('contact') }"
+        >
+          GSRS Team and Contact
+        </a>
+        <a
+          mat-list-item
+          class="list-button"
+          (click)="scroll(code)"
+          [ngClass]="{ 'active-sidemenu': isActive('code') }"
+        >
+          Code
+        </a>
+        <!-- <a
+           mat-list-item
+           class="list-button"
+           (click)="scroll(license)"
+           [ngClass]="{ 'active-sidemenu': isActive('license') }"
+         >
+           License
+         </a>-->
+      </mat-nav-list>
+    </div>
+  </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="drawer-container-content" >
+    @if (!navigationsidenav.opened) {
+    <div class="row">
+      <button
+        [color]="'primary'"
+        mat-stroked-button
+        class="menu-button"
+        aria-label="menu button"
+        (click)="navigationsidenav.toggle()"
+      >
+        Jump to...<mat-icon>bookmark</mat-icon>
+      </button>
+    </div>
+    }
+    <div class="row centered-row">
+      <div [ngClass]="{ 'full-width': navigationsidenav.opened, 'width-70': !navigationsidenav.opened }">
+    <div class="row">
+      <div>
+        <h1 class="rdas-title"><b>GSRS</b>: Global Substance Registration System</h1>
+      </div>
+    </div>
+    <div class="row" id="about" #about #scrollSection>
+        <div
+          class="section-header"
+          [ngClass]="{ 'active-sidemenu': isActive('about') }"
+        >
+          About GSRS
         </div>
-      </div>
-      <div class="row" id="about" #about #scrollSection>
-          <div
-            class="section-header"
-            [ngClass]="{ 'active-sidemenu': isActive('about') }"
-          >
-            About RDAS
-          </div>
-          <div class="section-content">
-            <p>
-              Rare disease patients often experience diagnosis delays or
-              misdiagnosis. The collection and public sharing of accurate,
-              up-to-date, standardized data on rare diseases are key priorities in
-              shortening the diagnostic odyssey. These data would inform health
-              care providers about the up-to-date information/findings on the rare
-              diseases they are treating, but also would educate patients and
-              their families with critical information pertinent to their
-              condition. Here, we introduce the NCATS Rare Disease Alert System
-              (RDAS) as a public, comprehensive rare disease resource that
-              supports searching, informing, educating, and alerting users on the
-              latest information and findings pertinent to rare diseases. RDAS is
-              built upon data integrated from multiple sources, including
-              publications, clinical trials, and NIH grant funding.
+        <div class="section-content">
+          <p>The Global Substance Registration System (GSRS) is an international platform designed to support the standardized identification, tracking, and management of substances used in pharmaceuticals, biologics, chemicals, and other regulated products. GSRS helps regulatory agencies, industry stakeholders, and researchers to uniquely and consistently identify substances for the purposes of registration, monitoring, and regulation.
             </p>
-            <p>
-              RDAS comprises a frontend user interface (UI) and a backend data
-              repository. The UI allows users to search, browse, and subscribe to
-              RDAS, in order to receive the latest information and findings about
-              their rare disease(s) of interest. The UI is built using the Angular
-              front-end library, with a Node/Express server layer to connect to
-              the underlying Neo4j database that stores the backend Knowledge
-              Graphs (KGs). The backend data repository includes three KGs built
-              by integrating information from PubMed articles, clinical trials,
-              and NIH grant funding related to rare diseases. The KGs are: 1)
-              Scientific Annotation Knowledge Graph (RDAS_SAKG) contains
-              annotations generated from article titles and abstracts by PubTator,
-              and epidemiology information extracted from article abstracts using
-              our previously developed deep learning models. 2) Clinical Trial
-              Knowledge Graph (RDAS_CTKG) semantically represents data extracted
-              from clinicaltrial.gov. 3) NIH Grant Funding Knowledge Graph
-              (RDAS_GFKG) contains annotations generated from project titles and
-              abstracts of NIH funded projects related to rare diseases.
-            </p>
+          <div class = "section-sub-header">
+            GSRS as Software
           </div>
-      </div>
-  
-      <div class="row" id="citation" #citation #scrollSection>
-          <div
-            class="section-header"
-            [ngClass]="{ 'active-sidemenu': isActive('citation') }"
-          >
-            Citation
+          <p>
+          GSRS, a web-based repository and browser for chemical substance data, is an open-source application built using the industry-standard Model-View-Controller (MVC) pattern. This project was born as a collaboration project between the U.S. National Institutes of Health (NIH) and the U.S. Food and Drug Administration (FDA), and it quickly gained adoption from a handful of enterprises which set up their own instance of it to support their business.
+        </p><p>
+          The GSRS code is hosted entirely on GitHub, while some compiled modules are hosted on Maven Central. In the spirit of open-source software development, each adopter of GSRS – a.k.a. collaborator – could contribute new functions to the core of the project.
+        </p><p>
+          GSRS uses a microservice-based architecture which allows collaborators to develop custom modules which serve to integrate GSRS with their own existing IT systems. As these modules are centrally stored in the GitHub repository, it is possible for other collaborators to use them and enhance them.
+        </p><p>
+          GSRS serves as a one-stop central repository for information related to chemical substances. For example, the FDA instance of GSRS serves as a central informational resource for all substances that are intended for human consumption. Other enterprises throughout the world use it as a repository for substances relevant to their business. GSRS facilitates the exchange (export and import) of substance records between different instances set up at various sites.
+        </p><p>
+          The first instances of GSRS were deployed by the United States government at FDA and at NIH's National Center for Advancing Translational Sciences (NCATS).
+        </p><p>
+          <div class = "section-sub-header">
+            GSRS as Data
           </div>
-          <div class="section-content">
-            <p>If you use RDAS, please cite the following work:</p>
-            <p>
-              <a
-                href="https://rdcu.be/c7G35"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Link to publication describing annotation process"
-                >Zhu, Q., Nguyễn, ÐT., Sheils, T. et al. Scientific evidence based
-                rare disease research discovery with research funding data in
-                knowledge graph. Orphanet J Rare Dis 16, 483 (2021).
-                https://doi.org/10.1186/s13023-021-02120-9</a
-              >
-            </p>
+          <p>
+           GSRS is also a set Public, curated data from the FDA, NCATS, and private companies Information on marketing and regulatory status, ingredient definitions, biological activity,
+           clinical use, and more. Over 160,000 unique substance records can be found within this publicly available dataset.
+        </p><p>
+         
+          </p>
+          <div class = "section-sub-header">
+            GSRS as a Process
           </div>
-      </div>
-  
-      <div class="row" id="publications" #publications #scrollSection>
-          <div
-            class="section-header"
-            [ngClass]="{ 'active-sidemenu': isActive('publications') }"
-          >
-            Additional Publications
-          </div>
-          <div class="section-content">
-            <p>
-              <a
-                href="https://translational-medicine.biomedcentral.com/articles/10.1186/s12967-023-04011-y"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Link to Precision Information Extraction for Rare Disease Epidemiology at Scale publication"
-                >Kariampuzha W; Alyea G; Qu S; Sanjak J; Mathé E; Sid E;
-                Chatelaine H; Yadaw A; Xu Y; Zhu Q, Precision Information
-                Extraction for Rare Disease Epidemiology at Scale, J Transl Med
-                21, 157 (2023). https://doi.org/10.1186/s12967-023-04011-y.
-              </a>
-            </p>
-  
-            <p>
-              <a
-                href="https://www.frontiersin.org/articles/10.3389/frai.2022.932665/abstract"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Link to Rare Disease based Scientific Annotation Knowledge Graph publication "
-                >Zhu Q, Qu C, Liu R, Vatas G, Clough A, Nguyen DT, Sid E, Mathe E,
-                Xu Y, Rare Disease based Scientific Annotation Knowledge Graph,
-                Front. Artif. Intell. 5:932665. doi: 10.3389/frai.2022.932665.
-              </a>
-            </p>
-            <p>
-              <a
-                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8378621/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Link to Recurrent Neural Networks to Automatically Identify Rare Disease Epidemiologic Studies from PubMed publication"
-                >John J, Sid E, Zhu Q, Recurrent Neural Networks to Automatically
-                Identify Rare Disease Epidemiologic Studies from PubMed, AMIA Annu
-                Symp Proc. 2021;2021:325-334. Published 2021 May 17.
-              </a>
-            </p>
-            <p>
-              <a
-                href="https://ojrd.biomedcentral.com/articles/10.1186/s13023-021-02120-9"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Link to Scientific Evidence based Rare Disease Research Discovery with Research Funding Data in Knowledge Graph publication "
-                >Zhu Q, Nguyen DT, Sheils T, Alyea G, Sid E, Xu Y, Dickens J,
-                Mathe E, Paiser A, Scientific Evidence based Rare Disease Research
-                Discovery with Research Funding Data in Knowledge Graph, Orphanet
-                J Rare Dis 16, 483 (2021).
-                https://doi.org/10.1186/s13023-021-02120-9.
-              </a>
-            </p>
-          </div>
-      </div>
-  
-      <div class="" id="contact" #contact #scrollSection>
-          <div class="section-header" [ngClass]="{ 'active-sidemenu': isActive('contact') }">
-            RDAS Team and Contact
-          </div>
-          <div class="section-content">
-            <h2 class="contributor-header">Current Contributors</h2>
-            <div class="row space-around-row">
-              <div class="portrait-holder width-20 width-sm-50">
-                <picture>
-                  <source
-                    srcset="/assets/rdas-about/devon_leadman.webp"
-                    type="image/webp"
-                  />
-                  <source
-                    srcset="/assets/rdas-about/devon_leadman.jpg"
-                    type="image/jpeg"
-                  />
-                  <img
-                    src="/assets/rdas-about/devon_leadman.jpg"
-                    alt="Devon Leadman portrait"
-                    class="rdas-portrait"
-                  />
-                </picture>
-                <br />
-                <a
-                  href="https://ncats.nih.gov/preclinical/core/informatics/informatics-scientists-software-developers"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Link to the NCATS Informatics staff page"
-                >
-                  <h2>Devon Leadman</h2>
-                </a>
-              </div>
-              <div class="portrait-holder width-20 width-sm-50">
-                <picture>
-                  <source
-                    srcset="/assets/rdas-about/timothy_sheils.webp"
-                    type="image/webp"
-                  />
-                  <source
-                    srcset="/assets/rdas-about/timothy_sheils.jpg"
-                    type="image/jpeg"
-                  />
-                  <img
-                    src="/assets/rdas-about/timothy_sheils.jpg"
-                    alt="Timothy Sheils portrait"
-                    class="rdas-portrait"
-                  />
-                </picture>
-                <br />
-                <a
-                  href="https://ncats.nih.gov/about/divisions-and-staff/sheilstk"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Link to the NCATS Informatics staff page"
-                >
-                  <h2>Timothy Sheils</h2>
-                </a>
-              </div>
-              <div class="portrait-holder width-20 width-sm-50">
-                <picture>
-                  <source
-                    srcset="/assets/rdas-about/yanji_xu.webp"
-                    type="image/webp"
-                  />
-                  <source
-                    srcset="/assets/rdas-about/yanji_xu.jpg"
-                    type="image/jpeg"
-                  />
-                  <img
-                    src="/assets/rdas-about/yanji_xu.jpg"
-                    alt="Yanji Xu portrait"
-                    class="rdas-portrait"
-                  />
-                </picture>
-                <br />
-                <a
-                  href="https://ncats.nih.gov/about/divisions-and-staff/xuy12"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Link to the NCATS Informatics staff page for Yanji Xu"
-                >
-                  <h2>Yanji Xu, Ph.D.</h2>
-                </a>
-              </div>
-              <div class="portrait-holder width-20 width-sm-50">
-                <picture>
-                  <source
-                    srcset="/assets/rdas-about/qian_zhu.webp"
-                    type="image/webp"
-                  />
-                  <source
-                    srcset="/assets/rdas-about/qian_zhu.jpg"
-                    type="image/jpeg"
-                  />
-                  <img
-                    src="/assets/rdas-about/qian_zhu.jpg"
-                    alt="Qian Zhu portrait"
-                    class="rdas-portrait"
-                  />
-                </picture>
-                <br />
-                <a
-                  href="https://ncats.nih.gov/about/divisions-and-staff/zhuqn"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Link to the NCATS Informatics staff page for Qian Zhu"
-                >
-                  <h2>Qian Zhu Ph.D.</h2>
-                </a>
-              </div>
+          <p>
+            Instead of relying on names--which vary across regulatory domains, countries, and regions—the GSRS knowledge base makes it possible for substances to be defined by standardized, scientific descriptions.
+             It classifies substances as chemical, protein, nucleic acid, polymer, structurally diverse, or mixture as detailed in the ISO 11238  (<a class = "text-link" href = "https://www.iso.org/standard/69697.html" >International Organization for Standardization</a>)  and <a class = "text-link" href = "https://www.iso.org/standard/70594.html">ISO DTS 19844</a>
+          </p>
+        </div>
+    </div>
+
+    <div class="" id="citation" #citation #scrollSection>
+        <div
+          class="section-header"
+          [ngClass]="{ 'active-sidemenu': isActive('citation') }"
+        >
+          FAQs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        </div>
+        <div class="section-content">
+         
+          <p>
+            A full list of frequently asked questions about the GSRS software, Dataset, API, and more can be found in the <a class = "text-link" href = "https://github.com/ncats/gsrs3-main-deployment/wiki/Frequently-Asked-Questions">FAQ Section of our github Wiki.</a>
+          </p>
+          <p><br/><br/></p>
+        </div>
+    </div>
+
+   
+
+    <div class="" id="contact" #contact #scrollSection>
+        <div class="section-header" [ngClass]="{ 'active-sidemenu': isActive('contact') }">
+          GSRS Team and Contact
+        </div>
+        <div class="section-content team-container">
+         
+
+          <div class="column space-around-row">
+            <h2 class="contributor-header">Developers</h2>
+            <div class="portrait-holder ">
+            <!---- <picture>
+                <source
+                  srcset="/assets/rdas-about/.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="/assets/rdas-about/.jpg"
+                  type="image/jpeg"
+                />
+                <img
+                  src="/assets/rdas-about/.jpg"
+                  alt="portrait"
+                  class="rdas-portrait"
+                />
+              </picture>-->
+              <br />
+             
+                <h2>Lihui Hu</h2>
             </div>
-            <p>
-              For questions or issues
-              <!--, please submit an issue on our
-              <a
-                href="https://github.com/ncats/RaMP-DB/issues"
+            <div class="portrait-holder ">
+              <!---- <picture>
+                  <source
+                    srcset="/assets/rdas-about/.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="/assets/rdas-about/.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="/assets/rdas-about/.jpg"
+                    alt="portrait"
+                    class="rdas-portrait"
+                  />
+                </picture>-->
+                <br />
+               
+                  <h2>Mitchell Miller</h2>
+            </div>
+           <!---- <div class="portrait-holder ">
+               <picture>
+                  <source
+                    srcset="/assets/rdas-about/.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="/assets/rdas-about/.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="/assets/rdas-about/.jpg"
+                    alt="portrait"
+                    class="rdas-portrait"
+                  />
+                </picture>
+                <br />
+               
+                  <h2>Niko Anderson</h2>
+            </div>-->
+            <div class="portrait-holder ">
+              <!---- <picture>
+                  <source
+                    srcset="/assets/rdas-about/.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="/assets/rdas-about/.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="/assets/rdas-about/.jpg"
+                    alt="portrait"
+                    class="rdas-portrait"
+                  />
+                </picture>-->
+                <br />
+               
+                  <h2>Archana Newatia</h2>
+            </div>
+            <div class="portrait-holder ">
+              <!---- <picture>
+                  <source
+                    srcset="/assets/rdas-about/.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="/assets/rdas-about/.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="/assets/rdas-about/.jpg"
+                    alt="portrait"
+                    class="rdas-portrait"
+                  />
+                </picture>-->
+                <br />
+               
+                  <h2>Alex Welsch</h2>
+            </div>
+            <div class="portrait-holder ">
+              <!---- <picture>
+                  <source
+                    srcset="/assets/rdas-about/.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="/assets/rdas-about/.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="/assets/rdas-about/.jpg"
+                    alt="portrait"
+                    class="rdas-portrait"
+                  />
+                </picture>-->
+                <br />
+               
+                  <h2>Egor Puzanov</h2>
+            </div>
+            </div>
+
+
+            <div class="column space-around-row">
+              <h2 class="contributor-header">Curators</h2>
+
+              <div class="portrait-holder ">
+              <!---- <picture>
+                  <source
+                    srcset="/assets/rdas-about/.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    srcset="/assets/rdas-about/.jpg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="/assets/rdas-about/.jpg"
+                    alt="portrait"
+                    class="rdas-portrait"
+                  />
+                </picture>-->
+                <br />
+               
+                  <h2>Dammika Amugoda</h2>
+              </div>
+              <div class="portrait-holder ">
+                <!---- <picture>
+                    <source
+                      srcset="/assets/rdas-about/.webp"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="/assets/rdas-about/.jpg"
+                      type="image/jpeg"
+                    />
+                    <img
+                      src="/assets/rdas-about/.jpg"
+                      alt="portrait"
+                      class="rdas-portrait"
+                    />
+                  </picture>-->
+                  <br />
+                    <h2>Marian Nkeng</h2>
+                </div>
+                <div class="portrait-holder ">
+                  <!---- <picture>
+                      <source
+                        srcset="/assets/rdas-about/.webp"
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="/assets/rdas-about/.jpg"
+                        type="image/jpeg"
+                      />
+                      <img
+                        src="/assets/rdas-about/.jpg"
+                        alt="portrait"
+                        class="rdas-portrait"
+                      />
+                    </picture>-->
+                    <br />
+                   
+                      <h2>Siba Bhattacharyya</h2>
+                  </div>
+                </div>
+
+                <div class="column space-around-row">
+                  <h2 class="contributor-header">Testers</h2>
+                  <div class="portrait-holder ">
+                  <!---- <picture>
+                      <source
+                        srcset="/assets/rdas-about/.webp"
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="/assets/rdas-about/.jpg"
+                        type="image/jpeg"
+                      />
+                      <img
+                        src="/assets/rdas-about/.jpg"
+                        alt="portrait"
+                        class="rdas-portrait"
+                      />
+                    </picture>-->
+                    <br />
+                   
+                      <h2>Arunasri Nishtala</h2>
+                  </div>
+                  <div class="portrait-holder ">
+                    <!---- <picture>
+                        <source
+                          srcset="/assets/rdas-about/.webp"
+                          type="image/webp"
+                        />
+                        <source
+                          srcset="/assets/rdas-about/.jpg"
+                          type="image/jpeg"
+                        />
+                        <img
+                          src="/assets/rdas-about/.jpg"
+                          alt="portrait"
+                          class="rdas-portrait"
+                        />
+                      </picture>-->
+                      <br />
+                     
+                        <h2>Ramez Ghazzaoui</h2>
+                    </div>
+                  </div>
+
+                  <div class="column space-around-row">
+                    <h2 class="contributor-header">Management</h2>
+                    <div class="portrait-holder ">
+                    <!---- <picture>
+                        <source
+                          srcset="/assets/rdas-about/.webp"
+                          type="image/webp"
+                        />
+                        <source
+                          srcset="/assets/rdas-about/.jpg"
+                          type="image/jpeg"
+                        />
+                        <img
+                          src="/assets/rdas-about/.jpg"
+                          alt="portrait"
+                          class="rdas-portrait"
+                        />
+                      </picture>-->
+                      <br />
+                     
+                        <h2>Tyler Peryea</h2>
+                    </div>
+                    <div class="portrait-holder ">
+                      <!---- <picture>
+                          <source
+                            srcset="/assets/rdas-about/.webp"
+                            type="image/webp"
+                          />
+                          <source
+                            srcset="/assets/rdas-about/.jpg"
+                            type="image/jpeg"
+                          />
+                          <img
+                            src="/assets/rdas-about/.jpg"
+                            alt="portrait"
+                            class="rdas-portrait"
+                          />
+                        </picture>-->
+                        <br />
+                          <h2>Frank Switzer</h2>
+                      </div>
+                      <div class="portrait-holder ">
+                        <!---- <picture>
+                            <source
+                              srcset="/assets/rdas-about/.webp"
+                              type="image/webp"
+                            />
+                            <source
+                              srcset="/assets/rdas-about/.jpg"
+                              type="image/jpeg"
+                            />
+                            <img
+                              src="/assets/rdas-about/.jpg"
+                              alt="portrait"
+                              class="rdas-portrait"
+                            />
+                          </picture>-->
+                          <br />
+                            <h2>Marlene Kim </h2>
+                        </div>
+                        <div class="portrait-holder ">
+                          <!---- <picture>
+                              <source
+                                srcset="/assets/rdas-about/.webp"
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="/assets/rdas-about/.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                src="/assets/rdas-about/.jpg"
+                                alt="portrait"
+                                class="rdas-portrait"
+                              />
+                            </picture>-->
+                            <br />
+                              <h2>Ewy Mathé </h2>
+                        </div>
+                        <div class="portrait-holder ">
+                          <!---- <picture>
+                              <source
+                                srcset="/assets/rdas-about/.webp"
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="/assets/rdas-about/.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                src="/assets/rdas-about/.jpg"
+                                alt="portrait"
+                                class="rdas-portrait"
+                              />
+                            </picture>-->
+                            <br />
+                              <h2>Jessica Maine</h2>
+                        </div>
+                        <div class="portrait-holder ">
+                          <!---- <picture>
+                              <source
+                                srcset="/assets/rdas-about/.webp"
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="/assets/rdas-about/.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                src="/assets/rdas-about/.jpg"
+                                alt="portrait"
+                                class="rdas-portrait"
+                              />
+                            </picture>-->
+                            <br />
+                              <h2>Sarah Stemann</h2>
+                        </div>
+                       
+                        </div>
+
+                        <div class="column space-around-row">
+                          <h2 class="contributor-header">Alumni</h2>
+                          <div class="portrait-holder ">
+                            <br />
+                              <h2>Danny Katzel</h2>
+                          </div>
+                          <div class="portrait-holder ">
+                            <br />
+                              <h2>Larry Callahan</h2>
+                          </div>
+                          <div class="portrait-holder ">
+                            <br />
+                              <h2>Niko Anderson</h2>
+                          </div>
+                          <div class="portrait-holder ">
+                            <br />
+                              <h2>Elizabeth Callahan</h2>
+                          </div>
+                          <div class="portrait-holder ">
+                            <br />
+                              <h2>Jorge Neyra</h2>
+                          </div>
+                          <div class="portrait-holder ">
+                            <br />
+                              <h2>Kesandu Nwokolo</h2>
+                          </div>
+                          <div class="portrait-holder ">
+                            <br />
+                              <h2>Meghan Mendick</h2>
+                          </div>
+                          <div class="portrait-holder ">
+                            <br />
+                              <h2>Noel Southall</h2>
+                          </div>
+                          <div class="portrait-holder ">
+                            <br />
+                              <h2>Tim Sheils</h2>
+                          </div>
+                          <div class="portrait-holder ">
+                            <br />
+                              <h2>Tongan Zhao</h2>
+                          </div>
+                          <div class="portrait-holder ">
+                            <br />
+                              <h2>Trung Nguyen</h2>
+                          </div>
+                          
+                          
+                             
+                              </div>
+                         
+  
+
+        </div>
+    </div>
+
+    <div class="" id="code" #code #scrollSection>
+        <div class="section-header" [ngClass]="{ 'active-sidemenu': isActive('code') }">Code</div>
+        <div class="section-content">
+          <p>
+          GSRS source code is freely available via our GitHub pages:
+          </p>
+          <p>
+          <mat-list>
+            <mat-list-item
+              ><a class = "text-link"
+                href="https://github.com/ncats/GSRSFrontend"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Link to the RaMP DB codebase"
-              >GitHub site</a
+                aria-label="Link to the RDAS GitHub page"
+                >GSRSFrontend</a
               >
-              or-->
-              send us an email at
-              <a href="mailto:ncatsrdas@mail.nih.gov"
-                >ncatsrdas&#64;mail.nih.gov</a
-              >
-            </p>
-          </div>
-      </div>
-  
-      <div class="" id="code" #code #scrollSection>
-          <div class="section-header" [ngClass]="{ 'active-sidemenu': isActive('code') }">Code</div>
-          <div class="section-content">
-            <p>
-            RDAS source code is freely available via our GitHub pages:
-            </p>
-            <p>
+              &nbsp;Source code for the GSRS Front-end</mat-list-item
+            >
+          </mat-list>
             <mat-list>
               <mat-list-item
-                ><a
-                  href="https://github.com/ncats/rdas"
+                ><a  class = "text-link"
+                  href="https://github.com/ncats/gsrs-ci"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Link to the RDAS GitHub page"
-                  >RDAS</a
+                  >GSRS-CI</a
                 >
-                &nbsp;Source code for the RDAS backend</mat-list-item
+                &nbsp;Source code for the GSRS Back-end</mat-list-item
               >
             </mat-list>
             </p>
-          </div>
-      </div>
-      <!--
-      <div class="row" id="license" #license #scrollSection>
-        <div class="width-75" >
-          <div class="section-header" [ngClass]="{ 'active-sidemenu': isActive('license') }">
-            License
-          </div>
-          <div class="section-content">
-            <p>
-              RDAS is released under a
-              <a
-                href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Link to the GPL-2 license site"
-              >GPL-2</a
-              >
-              license.
-            </p>
-          </div>
         </div>
-      </div>-->
-      <div class="spacer"></div>
     </div>
+    <!--
+    <div class="row" id="license" #license #scrollSection>
+      <div class="width-75" >
+        <div class="section-header" [ngClass]="{ 'active-sidemenu': isActive('license') }">
+          License
+        </div>
+        <div class="section-content">
+          <p>
+            RDAS is released under a
+            <a
+              href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Link to the GPL-2 license site"
+            >GPL-2</a
+            >
+            license.
+          </p>
+        </div>
       </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-  
+    </div>-->
+    <div class="spacer"></div>
+  </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

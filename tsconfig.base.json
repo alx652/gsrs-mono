@@ -24,6 +24,9 @@
       "@ncats-frontend-library/features/rdas/graphql-sandbox": [
         "libs/features/rdas/graphql-sandbox/src/index.ts"
       ],
+      "@ncats-frontend-library/features/rdas/history-api": [
+        "libs/features/rdas/history-api/src/index.ts"
+      ],
       "@ncats-frontend-library/features/rdas/privacy-page": [
         "libs/features/rdas/privacy-page/src/index.ts"
       ],
@@ -175,7 +178,7 @@
       "gsrs-api": ["libs/features/gsrs/gsrs-api/src/index.ts"],
       "gsrs-downloads": ["libs/features/gsrs/gsrs-downloads/src/index.ts"],
       "gsrs-home": ["libs/features/gsrs/gsrs-home/src/index.ts"],
-      "@ncats-frontend-library/features/rdas/history-api": ["libs/features/rdas/history-api/src/index.ts"],
+      "gsrs-store": ["libs/features/stores/gsrs-store/src/index.ts"],
       "ifx": ["libs/models/ifx/src/index.ts"],
       "ifx-tool-store": ["libs/stores/ifx-tool-store/src/index.ts"],
       "image-download": ["libs/shared/utils/image-download/src/index.ts"],

@@ -4,7 +4,7 @@
 
 .home-content {
     
-  }
+  
 
   .date {
     font-weight: 500;
@@ -82,7 +82,7 @@
   }
   
   .rdas-subheadline {
-    font-size: 2rem;
+    font-size: 1.66rem;
   }
   
   .graph {
@@ -131,6 +131,9 @@
     padding-top: 5vh;
   }
   
+  .test {
+    background-color: rgb(245, 245, 245);
+  }
   @media only screen and (max-width: 768px) {
     .home-content {
       padding-top: 5vh;
@@ -151,6 +154,8 @@
       font-weight: bold;
       padding: 1rem;
     }
+
+   
   
     .rdas-subheadline {
       font-size: 1.3rem;
@@ -181,4 +186,45 @@
   background-color: mat.get-color-from-palette($app-primary);
   color: #ffffff;
   scroll-margin: 10vh;
+}
+
+
+.home-image {
+  height: auto;
+  width: 100%;
+  margin:10px 0px;
+}
+
+.smaller-bottom-margin {
+  margin-bottom: -5px;
+}
+
+.temp-color {
+  color: #3080C2;
+  font-size: 14pt;
+}
+
+
+.blue-background {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testing {
+ margin-top: 20px;
+}
+
+.smaller-image {
+  width:75%;
+  margin-left: 12.5%;
+}
+}
+
+.temp-banner {
+  color:white;
+  padding-bottom:5px;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  background-color:#082848;
 }

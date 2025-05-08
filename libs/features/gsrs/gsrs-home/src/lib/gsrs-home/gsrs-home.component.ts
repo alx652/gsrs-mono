@@ -4,6 +4,7 @@ import { CommonModule, NgOptimizedImage } from "@angular/common";
 import {
   Component,
   ElementRef,
+  NgModule,
   OnInit,
   ViewChild,
   ViewEncapsulation
@@ -13,7 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { Router, RouterLink } from '@angular/router';
 import { LoadingSpinnerComponent } from "@ncats-frontend-library/shared/utils/loading-spinner";
 import releaseData from 'apps/gsrs/src/assets/data/dataReleases.json';
-
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'lib-gsrs-home',
@@ -25,7 +26,8 @@ import releaseData from 'apps/gsrs/src/assets/data/dataReleases.json';
     CdkScrollableModule,
     NgOptimizedImage,
     LoadingSpinnerComponent,
-    RouterLink
+    RouterLink,
+    MatButtonModule
   ],
   templateUrl: './gsrs-home.component.html',
   styleUrl: './gsrs-home.component.scss',

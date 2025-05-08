@@ -50,84 +50,113 @@
         <div class="bottom-border-primary heading-text">
          Registration System
         </div>
-        <h3 class="">
-       GSRS is an application For regulatory agencies and research institutions to browse, search, and register substances and related data. 
-        </h3>
-        <div class="">
+        <p>
+          GSRS is an application is for regulatory agencies and research institutions to browse, search, and register substances and related data. 
+        </p>
+
+        <!-- <div class="">
           <img src = "/assets/gsrs-home/GSRS_home_demo.png" class = "home-image" />
         </div>
         <div class="content">
           A Demo of the GSRS Software and public dataset can be viewed in the link below.
-        </div>
+        </div> -->
       </mat-card>
       <mat-card class="white-background rdas-card centered">
         <div class="bottom-border-primary heading-text">
           Public Data
         </div>
-        <h3 class="">
-         GSRS is a data set of over 160,000 publicly available substance records. Chemistry, associated metabolites, impurities, diseases, etc. 
-        </h3>
-        <div class="content">
+        <p>
+          GSRS provides access to a data set of over 160,000 publicly available substance records. Chemistry, associated metabolites, impurities, diseases, etc. 
+        <p>
+        <!-- <div class="content">
           FDA's GSRS instance enables efficient and accurate exchange of information on substances through their Unique Ingredient Identifiers (UNIIs) which can be generated at any time in the regulatory life cycle. <a href = "https://precision.fda.gov/uniisearch">UNII Search System.</a>
           <img src = "/assets/gsrs-home/uniiSearch.png" class = "home-image  smaller-image" />
           <br/>
          <div><a href = "https://drugs.ncats.io">Insight Drugs</a> is a comprehensive and curated portal for translational research using the GSRS dataset.</div> 
           <img src = "/assets/gsrs-home/inxight.png" class = "home-image smaller-image" />
-          </div>
+          </div> -->
       </mat-card>
       <mat-card class="white-background rdas-card centered  test-card">
         <div class="bottom-border-primary heading-text">
           Regulatory Workflow
         </div>
-        <h3>
+        <p>
           Based on ISO1128 standard, GSRS is a regulatory workflow providing consistent definitions of substances globally.
-        </h3>
-        <div class="content">
+        </p>
+        <!-- <div class="content">
           <a href = "https://precision.fda.gov/">PrecisionFDA</a> Is one platform using GSRS's workflow and software to upload, search and register multi-omics data.
           <img src = "/assets/gsrs-home/precisionFDA.png" class = "home-image smaller-image" />
           Community-sourced science such as that done through challenges offered by PrecisionFDA advance regulatory standards for bioinformatics, RWD, and AI
           <img src = "/assets/gsrs-home/gsrsCycle.png" class = "home-image smaller-image" />
-          </div>
+          </div> -->
       </mat-card>
     </div>
 
     <div class="grid-wrapper">
-      <mat-card class="white-background rdas-card centered  test-card">
+
+      <mat-card class="white-background rdas-card centered  test-card" style="background-color: white">
         <div class="bottom-border-primary heading-text">
          Public Registration System Demo
         </div>
-        <h3 class=""> &nbsp;
-        </h3>
-        <div class="content">
-          <a href = "https://gsrs.ncats.nih.gov/ginas/app/ui/" class = "temp-color">Try out the GSRS demo here</a>
-        </div>
+
+          <div class="action-button">
+            <a mat-button href="/ginas/app/ui/">
+              <span style="">
+                Try GSRS Demo
+              <mat-icon>open_in_new</mat-icon>
+              </span>
+            </a>
+          </div>
+ 
       </mat-card>
-      <mat-card class="white-background rdas-card centered">
+
+      <mat-card class="white-background rdas-card centered" style="background-color: white">
+
         <div class="bottom-border-primary heading-text">
           Download the latest Data Set
         </div>
-        <h3 class="">
-          {{releaseDate}}: {{releaseCount}} Records
-        </h3>
+
         <div class="content">
-          <a href = "../../assets/downloads/{{releasePath}}" class = "temp-color" download>Download Dataset</a>
-        </div> 
-        <div class="content">
-          (
-            <a href ="https://github.com/ncats/gsrs-ci/blob/gsrs-example-deployment/docs/Data%20Import%20Users%20Guide.docx"> Click here</a> for instructions on how to load this data)
+          <div class="action-button">
+            <a mat-button href="/assets/downloads/dump-public-2025-03-06.gsrs">
+              <span>
+                Download Dataset
+                <mat-icon>download</mat-icon>
+              </span>
+            </a>
           </div>
-      </mat-card>
-      <mat-card class="white-background rdas-card centered">
-        <div class="bottom-border-primary heading-text">
-          View the Wiki
         </div>
-        <h3> &nbsp;
-        </h3>
+
         <div class="content">
-          <a href ="https://github.com/ncats/gsrs-ci/wiki" class = "temp-color">GSRS Github Wiki / Documentation</a>
-          </div>
+              {{releaseDate}}: {{releaseCount}} Records
+        </div>
+
+        <div class="content">
+          (<a href ="https://github.com/ncats/gsrs-ci/blob/gsrs-example-deployment/docs/Data%20Import%20Users%20Guide.docx"> Click here</a> for instructions on how to load this data)
+        </div>
+
       </mat-card>
-    </div>
+
+      <mat-card class="white-background rdas-card centered" style="background-color: white">
+        <div class="bottom-border-primary heading-text">
+          GSRS Github Wiki / Documentation
+        </div>
+
+        <div class="content">
+
+          <div class="action-button">
+            <a mat-button href="https://github.com/ncats/gsrs-ci/wiki">
+              <span style="">
+                View the Wiki
+                <mat-icon>open_in_new</mat-icon>
+              </span>
+            </a>
+          </div>
+        </div>
+    </mat-card>
+
+  </div>
+
     <div class="grid-wrapper annotation-standardization-grid test">
       <mat-card class="white-background rdas-card centered">
         <div class="bottom-border-primary heading-text">

@@ -17,11 +17,20 @@ All files that would typically be edited are in libs/features/gsrs-*/src/libs
 
 # Putting this on gsrs-webpage (construction branch)
 
-Delete everything except /downloads in gsrs-webpage
+Delete everything except ./downloads in gsrs-webpage
 
-cp -r dist/app/gsrs/ ../gsrs-webpage/
+```
+# copy-to-gsrs-webpage.sh
+shopt -s extglob
+rm -rf ../gsrs-webpage/!(downloads)
+cp -r dist/apps/gsrs/ ../gsrs-webpage/
+```
 
-mv gsrs-webpage/downloads assets/downloads
+If you're ok with this script: 
+
+```
+bash copy-to-gsrs-webpage.sh
+```
 
 # To re integrate with Tim's repo:
 

@@ -21,6 +21,14 @@ class="navigation-menu-panel"
     <a
       mat-list-item
       class="list-button"
+      (click)="scroll(code)"
+      [ngClass]="{ 'active-sidemenu': isActive('code') }"
+    >
+      Code
+    </a>
+    <a
+      mat-list-item
+      class="list-button"
       (click)="scroll(releases)"
       [ngClass]="{ 'active-sidemenu': isActive('releases') }"
     >
@@ -47,11 +55,22 @@ class="navigation-menu-panel"
 </div>
 </mat-sidenav>
 
-
-<div class="row centered-row" id="releases" #releases #scrollSection>
+<div class="row centered-row">
     <div class="width-sm-100 width-75">
+
       <mat-card class = "rdas-card">
-        <div class="width-50 width-md-80 section-header">
+        <div class="width-50 width-md-80 width-75 section-header" id="code" #code #scrollSection>
+          Code
+        </div>
+        <div class="section-content width-75">          
+          <p>Find code and documentation at <a href='https://github.com/ncats/gsrs3-main-deployment' class='temp-color'>https://github.com/ncats/gsrs3-main-deployment</a>:</p>
+          <ul><li><a href='https://github.com/ncats/gsrs3-main-deployment' class='temp-color'>Readme</a></li><li><a href='https://github.com/ncats/gsrs3-main-deployment/wiki' class='temp-color'>Wiki</a></li><li><a href='https://github.com/ncats/gsrs3-main-deployment/tree/main/docs' class='temp-color'>Docs folder</a></li></ul>
+        </div>
+        </mat-card>
+
+
+      <mat-card class = "rdas-card">
+        <div class="width-50 width-md-80 section-header" id="releases" #releases #scrollSection>
           Releases
         </div>
         <div class="width-50 width-md-80 section-subheader">
@@ -151,6 +170,8 @@ class="navigation-menu-panel"
 
     </mat-card-content>
     </mat-card>
+
+    
     <mat-card class = "rdas-card">
       <div class="width-50 width-md-80 width-75 section-header" id="other" #other #scrollSection>
         Other Downloads

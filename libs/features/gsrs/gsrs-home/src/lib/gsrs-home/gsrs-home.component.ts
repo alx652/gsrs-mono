@@ -53,6 +53,10 @@ releasePath!: string;
     });
   }
 
+  goToLinkInNew(url: string) {
+    window.open(url, "_new");
+  }
+
   ngOnInit(): void {
     console.log(releaseData);
     let currentRecords = releaseData.Datasets[0].records?.toString() || null;

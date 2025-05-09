@@ -4,31 +4,19 @@
   </div>
   <div class="graph-holder">
     <div class="home-component">
-      <div class="width-50 width-md-90 rdas-headline" style = "color:white">
+      <div class="width-100 width-md-90 rdas-headline" style = "color:white">
           The GSRS project
       </div>
 
-      <div class="width-75 width-md-90 rdas-subheadline">
-         <!--The main goal of GSRS is the production of software, called GSRS, to assist agencies in registering and documenting
-           information about substances found in medicines. The Global Ingredient Archival System provides a common identifier
-            for all of the substances used in medicinal products, utilizing a consistent definition of substances globally,
-             including active substances under clinical investigation, consistent with the ISO 11238 standard.--> 
-            The Global Substance Registration System (GSRS) enables efficient and accurate exchange of information on substances through their
+      <div class="width-90 width-md-90 rdas-subheadline">
+            <div class="banner-text">The Global Substance Registration System (GSRS) enables efficient and accurate exchange of information on substances through their
              Unique Ingredient Identifiers (UNIIs) which can be generated at any time in the regulatory life cycle.
              The GSRS defines substances by standardizing scientific descriptions of ingredients (chemical, protein,
-             nucleic acid, polymer, structurally diverse, or mixture) following the guidelines of ISO 11238 and ISO DTS 19844.
-          
+             nucleic acid, polymer, structurally diverse, or mixture) following the guidelines of ISO 11238 and ISO DTS 19844.         
              See more about GSRS below including information on its registration system, access to public data (including data curated by the FDA), as well as 
-             a regulatory workflow .
-             <br/>
-             GSRS was developed through a collaboration between the FDA, NIH's National Center for Advancing Translational Sciences (NCATS),
-             and international partners including EMA, USP, WHO, UMC, BfARM.
-
-
-             
-                <br/><br/>
-
-
+             a regulatory workflow.</div>
+             <div class="banner-text">GSRS was developed through a collaboration between the FDA, NIH's National Center for Advancing Translational Sciences (NCATS),
+             and international partners including EMA, USP, UMC, BfARM.</div>
       </div>
     </div>
   </div>
@@ -50,9 +38,9 @@
         <div class="bottom-border-primary heading-text">
          Registration System
         </div>
-        <p>
-          GSRS is an application is for regulatory agencies and research institutions to browse, search, and register substances and related data. 
-        </p>
+        <h3 class="softer-h3">
+          GSRS is an application for regulatory agencies and research institutions to browse, search, and register substances and related data. 
+        </h3>
 
         <!-- <div class="">
           <img src = "/assets/gsrs-home/GSRS_home_demo.png" class = "home-image" />
@@ -65,9 +53,9 @@
         <div class="bottom-border-primary heading-text">
           Public Data
         </div>
-        <p>
+        <h3 class="softer-h3">
           GSRS provides access to a data set of over 160,000 publicly available substance records. Chemistry, associated metabolites, impurities, diseases, etc. 
-        <p>
+        </h3>
         <!-- <div class="content">
           FDA's GSRS instance enables efficient and accurate exchange of information on substances through their Unique Ingredient Identifiers (UNIIs) which can be generated at any time in the regulatory life cycle. <a href = "https://precision.fda.gov/uniisearch">UNII Search System.</a>
           <img src = "/assets/gsrs-home/uniiSearch.png" class = "home-image  smaller-image" />
@@ -80,9 +68,9 @@
         <div class="bottom-border-primary heading-text">
           Regulatory Workflow
         </div>
-        <p>
+        <h3 class="softer-h3">
           Based on ISO1128 standard, GSRS is a regulatory workflow providing consistent definitions of substances globally.
-        </p>
+        </h3>
         <!-- <div class="content">
           <a href = "https://precision.fda.gov/">PrecisionFDA</a> Is one platform using GSRS's workflow and software to upload, search and register multi-omics data.
           <img src = "/assets/gsrs-home/precisionFDA.png" class = "home-image smaller-image" />
@@ -96,31 +84,33 @@
 
       <mat-card class="white-background rdas-card centered  test-card" style="background-color: white">
         <div class="bottom-border-primary heading-text">
-         Public Registration System Demo
+         Public Registration System
         </div>
 
           <div class="action-button">
-            <a mat-button href="/ginas/app/ui/">
+            <a mat-button (click)="goToLinkInNew('/ginas/app/ui/')" href="javascript:;">
               <span style="">
-                Try GSRS Demo
-              <mat-icon>open_in_new</mat-icon>
+                Try GSRS
+                <mat-icon>open_in_new</mat-icon>
               </span>
             </a>
           </div>
+          <p>Browse data on the NCATS deployment</p>
  
       </mat-card>
 
       <mat-card class="white-background rdas-card centered" style="background-color: white">
 
         <div class="bottom-border-primary heading-text">
-          Download the latest Data Set
+          Download the latest Dataset
         </div>
 
         <div class="content">
           <div class="action-button">
-            <a mat-button href="/assets/downloads/dump-public-2025-03-06.gsrs">
+            <a mat-button 
+              target="_self" href = "/assets/downloads/dump-public-2025-03-06.gsrs" download = "dump-public-2025-03-06.gsrs">
               <span>
-                Download Dataset
+                Download Data
                 <mat-icon>download</mat-icon>
               </span>
             </a>
@@ -128,11 +118,11 @@
         </div>
 
         <div class="content">
-              {{releaseDate}}: {{releaseCount}} Records
+              {{releaseDate}}: {{releaseCount}} records
         </div>
 
         <div class="content">
-          (<a href ="https://github.com/ncats/gsrs-ci/blob/gsrs-example-deployment/docs/Data%20Import%20Users%20Guide.docx"> Click here</a> for instructions on how to load this data)
+          (<a href ="https://github.com/ncats/gsrs-ci/blob/gsrs-example-deployment/docs/Data%20Import%20Users%20Guide.docx">Click here</a> for instructions on how to load this data)
         </div>
 
       </mat-card>
@@ -145,7 +135,7 @@
         <div class="content">
 
           <div class="action-button">
-            <a mat-button href="https://github.com/ncats/gsrs-ci/wiki">
+            <a mat-button (click)="goToLinkInNew('https://github.com/ncats/gsrs-ci/wiki')" href="javascript:;">
               <span style="">
                 View the Wiki
                 <mat-icon>open_in_new</mat-icon>
@@ -162,15 +152,21 @@
         <div class="bottom-border-primary heading-text">
          Latest Release
         </div>
-        <div class="">
-          <h3>
-            <span class = "date"> November, 2024 </span>  GSRS v3.1.1
-          </h3>
+
+        <div class="action-button">
+          <a mat-button href="javascript:;" routerLink="downloads">
+            <span style="">
+              Get the Code
+              <mat-icon>link</mat-icon>
+            </span>
+          </a>
         </div>
-        <div class="content">
-          The newest version of GSRS is now available. <br/><br/> <a href = "/downloads" class = "temp-color">Download / view release notes</a>
-        </div>
+        <p>GSRS v3.1.2 released in May, 2025 is <a href="javascript:;" routerLink="downloads"  class = "temp-color">available</a>. Check the <a href="javascript:;" routerLink="downloads"  class = "temp-color">release notes summary</a>.</p>
       </mat-card>
+
+
+
+
      <!-- <mat-card class="white-background rdas-card centered">
         <div class="bottom-border-primary heading-text">
           Subscribe for GSRS Updates

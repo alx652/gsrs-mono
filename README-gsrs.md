@@ -15,7 +15,7 @@ npx nx build gsrs
 
 All files that would typically be edited are in libs/features/gsrs-*/src/libs
 
-# Putting this on gsrs-webpage (construction branch)
+## Putting this on gsrs-webpage (construction branch)
 
 Delete everything except ./downloads in gsrs-webpage
 
@@ -32,10 +32,23 @@ If you're ok with this script:
 bash copy-to-gsrs-webpage.sh
 ```
 
-# To re integrate with Tim's repo:
+## Packing up the distribution to tar gz 
+
+```
+cd ../gsrs-webpage 
+tar -cvzf ../temp.tar.gz --exclude=.git --exclude=.github --exclude=downloads ./
+```
+
+## To re integrate with Tim's repo:
 
 Copy the 2 gsrs folders 
 
 At root update ts.config.json 
 
+## Regular updates to the site. 
+```
+# To add a new data release
 
+apps/gsrs/src/assets/data/dataReleases.json
+
+```

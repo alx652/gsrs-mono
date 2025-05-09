@@ -78,7 +78,7 @@
   .rdas-headline {
     font-size: 4rem;
     font-weight: bold;
-    padding-bottom: 2rem;
+    padding-bottom: .5rem;
   }
   
   .rdas-subheadline {
@@ -134,25 +134,44 @@
   .test {
     background-color: rgb(245, 245, 245);
   }
+
+  @media only screen and (max-width: 1000px) {
+    .rdas-subheadline {
+      font-size: 1.3rem;
+      padding: .5rem;
+    }
+  }
+
+  @media only screen and (max-width: 850px) {
+    .rdas-subheadline {
+      font-size: 1.3rem;
+      padding: .5rem;
+    }
+  }
+
   @media only screen and (max-width: 768px) {
     .home-content {
-      padding-top: 5vh;
+      padding-top: 10vh;
+
     }
   
     .home-component {
       padding-top: 5vh;
       padding-left: 0;
-      background: linear-gradient(
-        to right,
-        rgb(255, 255, 255) 0%,
-        rgba(255, 255, 255, 0.7) 80%,
-        rgba(255, 255, 255, 0) 100%
-      );
+      // background: linear-gradient(
+      //   to right,
+      //   rgb(255, 255, 255) 0%,
+      //   rgba(255, 255, 255, 0.7) 80%,
+      //   rgba(255, 255, 255, 0) 100%
+      // );
+      // Too hard to read with gradient at narrow width screen.
+      background-color: #1b3559 !important;
+
     }
     .rdas-headline {
-      font-size: 2.5rem;
+      font-size: 1.3rem;
       font-weight: bold;
-      padding: 1rem;
+      padding: .5rem;
     }
 
    
@@ -228,17 +247,18 @@
   text-align: center;
   background-color:#082848;
 }
-
+.softer-h3 { 
+  font-weight: normal;
+}
 
 .action-button {
   margin-top: 1em;
   margin-bottom: .5em;
-
   border: 1px solid black;
-  border-radius: 3px;
+  border-radius: 5px;
   background-color: lightgrey;
-  padding: 7px;
-  height: 30px;
+  padding: 10px;
+  min-height: 30px;
   font-size: 25px;
   text-align: center;
 }
@@ -250,5 +270,6 @@
 
 .action-button:hover {
   background-color: gainsboro;
-  padding: 7px;
+  padding: 10px;
 }
+

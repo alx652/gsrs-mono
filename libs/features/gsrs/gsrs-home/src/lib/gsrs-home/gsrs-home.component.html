@@ -15,6 +15,7 @@
              nucleic acid, polymer, structurally diverse, or mixture) following the guidelines of ISO 11238 and ISO DTS 19844.         
              See more about GSRS below including information on its registration system, access to public data (including data curated by the FDA), as well as 
              a regulatory workflow.</div>
+             <br>
              <div class="banner-text">GSRS was developed through a collaboration between the FDA, NIH's National Center for Advancing Translational Sciences (NCATS),
              and international partners including EMA, USP, UMC, BfARM.</div>
       </div>
@@ -69,7 +70,7 @@
           Regulatory Workflow
         </div>
         <h3 class="softer-h3">
-          Based on ISO1128 standard, GSRS is a regulatory workflow providing consistent definitions of substances globally.
+          Based on ISO 11238 and ISO DTS 19844 standards, GSRS is a regulatory workflow providing consistent definitions of substances globally.
         </h3>
         <!-- <div class="content">
           <a href = "https://precision.fda.gov/">PrecisionFDA</a> Is one platform using GSRS's workflow and software to upload, search and register multi-omics data.
@@ -122,7 +123,8 @@
         </div>
 
         <div class="content">
-          (<a href ="https://github.com/ncats/gsrs-ci/blob/gsrs-example-deployment/docs/Data%20Import%20Users%20Guide.docx">Click here</a> for instructions on how to load this data)
+          (<a (click)="goToLinkInNew('https://github.com/ncats/gsrs3-main-deployment/blob/main/docs/Data%20Import%20Users%20Guide.docx')" 
+          href="javascript:;">Click here</a> for instructions on how to load this data)
         </div>
 
       </mat-card>
@@ -135,7 +137,8 @@
         <div class="content">
 
           <div class="action-button">
-            <a mat-button (click)="goToLinkInNew('https://github.com/ncats/gsrs-ci/wiki')" href="javascript:;">
+            <a mat-button (click)="goToLinkInNew('https://github.com/ncats/gsrs3-main-deployment/wiki')" 
+            href="javascript:;">
               <span style="">
                 View the Wiki
                 <mat-icon>open_in_new</mat-icon>

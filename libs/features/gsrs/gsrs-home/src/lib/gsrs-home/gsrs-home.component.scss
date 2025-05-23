@@ -82,7 +82,12 @@
   }
   
   .rdas-subheadline {
-    font-size: 1.66rem;
+    font-size: 1.33rem;
+    padding-top: .5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 5rem;
+    max-width: 1200px;
   }
   
   .graph {
@@ -102,9 +107,6 @@
     background-size: cover; /* or 'contain' depending on the effect you want */
     background-position: center;
     background-repeat: no-repeat; /* Optional, to avoid repeating the image */
-    
-     
-    
   }
   
   .learn-more {
@@ -137,15 +139,14 @@
 
   @media only screen and (max-width: 1000px) {
     .rdas-subheadline {
-      font-size: 1.3rem;
-      padding: .5rem;
+      font-size: 1.2rem;
     }
   }
 
   @media only screen and (max-width: 850px) {
     .rdas-subheadline {
-      font-size: 1.3rem;
-      padding: .5rem;
+      font-size: 1.2rem;
+    
     }
   }
 
@@ -177,8 +178,11 @@
    
   
     .rdas-subheadline {
-      font-size: 1.3rem;
-      padding: 1rem;
+      font-size: 1.2rem;
+      padding-top: .5rem;
+      padding-bottom: 1.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
   
     .graph-holder {

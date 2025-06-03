@@ -35,8 +35,8 @@ bash copy-to-gsrs-webpage.sh
 ## Packing up the distribution to tar gz 
 
 ```
-cd ../gsrs-webpage 
-tar -cvzf ../temp.tar.gz --exclude=.git --exclude=.github --exclude=downloads ./
+# will write to ../temp.zip a zip of gsrs-webpage/ that excludes .git and downloads and assets/downloads/dump/*
+perl package-gsrs-webpage.pl
 ```
 
 ## To re integrate with Tim's repo:

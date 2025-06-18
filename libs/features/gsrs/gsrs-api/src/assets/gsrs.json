@@ -145,6 +145,41 @@
         }
       }
     },
+	"/substances/novalid": {
+		"put": {
+        "tags": ["create and update"],
+        "summary": "Update a substance record",
+        "description": "Update an existing substance record with a new JSON. This will NOT perform validation. Note that this update matches substance records based on the \"uuid\" field of the submitted JSON.",
+        "consumes": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "auth-username": [],
+            "auth-key": []
+          }
+        ],
+        "parameters":[ {
+          "name": "body",
+          "description": "json of the substance",
+          "type": "application/json",
+          "in": "body",
+          "required": "true"
+        }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "401": {
+              "description": "Bad or malformed request"
+          },
+          "500": {
+              "description": "Error in substance validation"
+          }
+        }
+      }
+	},
     "/vocabularies": {
       "get": {
         "tags": [

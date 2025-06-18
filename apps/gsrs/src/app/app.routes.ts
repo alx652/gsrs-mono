@@ -16,14 +16,14 @@ export const routes: Route[] = [
           ),
       },
       {
-        path: 'api',
+        path: 'api-documentation',
         loadComponent: () =>
           import('gsrs-api').then(
             (m) => m.GsrsApiComponent
           ),
       },
       {
-        path: 'downloads',
+        path: 'data-downloads',
         loadComponent: () =>
           import('gsrs-downloads').then(
             (m) => m.GsrsDownloadsComponent

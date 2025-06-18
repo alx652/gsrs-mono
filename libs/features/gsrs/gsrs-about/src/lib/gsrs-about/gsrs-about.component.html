@@ -41,8 +41,18 @@
           (click)="scroll(contact)"
           [ngClass]="{ 'active-sidemenu': isActive('contact') }"
         >
-          GSRS Team and Contact
+          Contact
         </a>
+        <a
+          mat-list-item
+          class="list-button"
+          (click)="scroll(team)"
+          [ngClass]="{ 'active-sidemenu': isActive('team') }"
+        >
+          GSRS Team
+        </a>
+
+
         <a
           mat-list-item
           class="list-button"
@@ -84,7 +94,7 @@
         <h1 class="rdas-title"><b>GSRS</b>: Global Substance Registration System</h1>
       </div>
     </div>
-    <div class="row" id="about" #about #scrollSection>
+    <div class="scroll-section" id="about" #about #scrollSection>
         <div
           class="section-header"
           [ngClass]="{ 'active-sidemenu': isActive('about') }"
@@ -127,28 +137,49 @@
         </div>
     </div>
 
-    <div class="" id="citation" #citation #scrollSection>
+    <div class="scroll-section" id="citation" #citation #scrollSection>
         <div
           class="section-header"
           [ngClass]="{ 'active-sidemenu': isActive('citation') }"
         >
-          FAQs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          FAQs
         </div>
         <div class="section-content">
          
           <p>
             A full list of frequently asked questions about the GSRS software, Dataset, API, and more can be found in the <a class = "text-link" href = "https://github.com/ncats/gsrs3-main-deployment/wiki/Frequently-Asked-Questions">FAQ Section of our github Wiki.</a>
           </p>
-          <p><br/><br/></p>
         </div>
     </div>
 
+    <div class="scroll-section" id="contact" #contact #scrollSection>
+        <div
+          class="section-header"
+          [ngClass]="{ 'active-sidemenu': isActive('contact') }"
+        >
+          Contact &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        </div>
+        <div class="section-content">
+ 
+          <p>For questions concerning ...</p> 
+
+       <p style="font-weight: bold">Data, UNIIs</p>
+
+       <p><a href="mailto:FDA-SRS@fda.hhs.gov">FDA-SRS&#64;fda.hhs.gov</a></p>
+
+      <p style="font-weight: bold">GSRS Software/Code</p>
+
+       <p><a href="mailto:ncatsgsrs@mail.nih.gov">ncatsgsrs&#64;mail.nih.gov</a></p>
+       </div>
+    </div>
    
 
-    <div class="" id="contact" #contact #scrollSection>
-        <div class="section-header" [ngClass]="{ 'active-sidemenu': isActive('contact') }">
-          GSRS Team and Contact
+    <div class="scroll-section" id="team" #team #scrollSection>
+        <div class="section-header" [ngClass]="{ 'active-sidemenu': isActive('team') }">
+          GSRS Team
         </div>
+
+
         <div class="section-content team-container">
          
 
@@ -545,38 +576,28 @@
         </div>
     </div>
 
-    <div class="" id="code" #code #scrollSection>
+    <div class="scroll-section" id="code" #code #scrollSection>
         <div class="section-header" [ngClass]="{ 'active-sidemenu': isActive('code') }">Code</div>
         <div class="section-content">
+          <p>GSRS source code is freely available via our GitHub pages:</p>
           <p>
-          GSRS source code is freely available via our GitHub pages:
-          </p>
-          <p>
-          <mat-list>
-            <mat-list-item
-              ><a class = "text-link"
+                <a class = "text-link"
                 href="https://github.com/ncats/GSRSFrontend"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Link to the GSRS Frontend GitHub page"
-                >GSRSFrontend</a
-              >
-              &nbsp;Source code for the GSRS Front-end</mat-list-item
-            >
-          </mat-list>
-            <mat-list>
-              <mat-list-item
-                ><a  class = "text-link"
+                >
+                GSRS Front-end</a>
+
+          </p>    
+          <p>
+            <a  class = "text-link"
                   href="https://github.com/ncats/gsrs3-main-deployment"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Link to the NCATS GSRS GitHub page"
-                  >gsrs3-main-deployment</a
-                >
-                &nbsp;Source code for the GSRS Back-end</mat-list-item
-              >
-            </mat-list>
-            </p>
+                >gsrs3-main-deployment</a>
+          </p>
         </div>
     </div>
     <!--

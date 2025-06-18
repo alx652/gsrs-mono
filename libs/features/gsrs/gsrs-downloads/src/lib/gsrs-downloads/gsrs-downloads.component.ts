@@ -8,6 +8,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
+import { RouterLink } from '@angular/router';
+
 import {
   ChangeDetectorRef,
   Component, DestroyRef,
@@ -22,15 +24,17 @@ import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
   selector: 'lib-gsrs-downloads',
   standalone: true,
   encapsulation: ViewEncapsulation.None,
-  imports: [CommonModule,
-            MatCardModule,
+  imports: [
+    CommonModule,        
+    MatCardModule,
     MatListModule,
     ScrollingModule,
     OverlayModule,
     MatMenuModule,
     MatIconModule,
     MatSidenavModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterLink
   ],
   templateUrl: './gsrs-downloads.component.html',
   styleUrl: './gsrs-downloads.component.scss',

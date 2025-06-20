@@ -23,7 +23,7 @@ export const routes: Route[] = [
           ),
       },
       {
-        path: 'data-downloads',
+        path: 'downloads',
         loadComponent: () =>
           import('gsrs-downloads').then(
             (m) => m.GsrsDownloadsComponent

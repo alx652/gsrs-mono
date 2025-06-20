@@ -10,6 +10,7 @@
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "baseHref": "/",
         "outputPath": "dist/apps/gsrs",
         "index": "apps/gsrs/src/index.html",
         "main": "apps/gsrs/src/main.ts",
@@ -32,12 +33,15 @@
         "stylePreprocessorOptions": {
           "includePaths": ["libs/styles/src/styles/"]
         },
-        "styles": ["apps/gsrs/src/styles.scss",
-                    "node_modules/swagger-ui/dist/swagger-ui.css"],
+        "styles": [
+          "apps/gsrs/src/styles.scss",
+          "node_modules/swagger-ui/dist/swagger-ui.css"
+        ],
         "scripts": []
       },
       "configurations": {
         "production": {
+          "baseHref": "/",
           "budgets": [
             {
               "type": "initial",
@@ -53,6 +57,7 @@
           "outputHashing": "all"
         },
         "development": {
+          "baseHref": "/",
           "buildOptimizer": false,
           "optimization": false,
           "vendorChunk": true,

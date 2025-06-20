@@ -36,6 +36,7 @@ import { provideState, provideStore, Store } from "@ngrx/store";
 import { provideStoreDevtools } from "@ngrx/store-devtools";
 
 import { routes } from './app.routes';
+import { APP_BASE_HREF } from "@angular/common";
 
 export function rdasInit(store = inject(Store)) {
   return () => {
@@ -52,6 +53,7 @@ export const appConfig: ApplicationConfig = {
       deps: [],
       multi: true,
     },
+    { provide: APP_BASE_HREF, useValue: '/' },
     provideRouter(
       routes,
       withViewTransitions(),

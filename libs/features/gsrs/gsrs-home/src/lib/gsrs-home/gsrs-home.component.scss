@@ -1,6 +1,7 @@
   
 @use '@angular/material' as mat;
 @import '../../../../libs/styles/src/styles/gsrs-theme.scss';
+@import '../../../../libs/styles/src/styles/gsrs-variables.scss';
 
 .home-content {
     
@@ -99,11 +100,11 @@
     right: 0;
     overflow: hidden;
   }
-  
+
   .graph-holder {
     height: 50vh;
     padding-top: 8vh;
-    background-image: url('/assets/gsrs-home/banner-pillcloud2.jpg');
+    background-image: url("#{$base-href}assets/gsrs-home/banner-pillcloud2.jpg");
     background-size: cover; /* or 'contain' depending on the effect you want */
     background-position: center;
     background-repeat: no-repeat; /* Optional, to avoid repeating the image */

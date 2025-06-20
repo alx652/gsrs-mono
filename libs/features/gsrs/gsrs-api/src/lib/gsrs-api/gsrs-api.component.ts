@@ -37,7 +37,7 @@ export class GsrsApiComponent {
       afterNextRender(() => {
         if (this.isBrowser) {
           SwaggerUI({
-            url: '/assets/gsrs-api/gsrs.json',
+            url: 'assets/gsrs-api/gsrs.json',
             domNode: this.el.nativeElement,
           });
         }

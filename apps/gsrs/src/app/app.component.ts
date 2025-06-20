@@ -72,7 +72,7 @@ export class AppComponent {
       label: 'ABOUT',
     },
     {
-      link: 'data-downloads',
+      link: 'downloads',
       label: 'DOWNLOADS',
     }];
 
@@ -84,6 +84,8 @@ export class AppComponent {
 }
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes, withEnabledBlockingInitialNavigation())],
+  providers: [
+    provideRouter(routes, withEnabledBlockingInitialNavigation()),
+  ],
 };
 

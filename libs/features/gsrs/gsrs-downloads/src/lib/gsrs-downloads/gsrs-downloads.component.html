@@ -37,6 +37,16 @@ class="navigation-menu-panel"
     <a
       mat-list-item
       class="list-button"
+      (click)="scroll(data)"
+      [ngClass]="{ 'active-sidemenu': isActive('data') }"
+    >
+      Data Downloads
+    </a>
+
+
+    <a
+      mat-list-item
+      class="list-button"
       (click)="scroll(other)"
       [ngClass]="{ 'active-sidemenu': isActive('other') }"
     >
@@ -118,7 +128,7 @@ class="navigation-menu-panel"
     </div><br/>
     <div class="width-50 width-md-80 section-content">
       
-    The GSRS version 3.1.2 can be found cloned locally using:
+    The GSRS version 3.1.2 can be cloned to your local computer system using:
 
     <br/><br/><code>git clone https://github.com/ncats/gsrs3-main-deployment</code><br/><br/>
 
@@ -132,13 +142,21 @@ class="navigation-menu-panel"
     <div class="width-50 width-md-80 section-content">      
       <p> Have a deployment related question? First, be sure to check our <a href = "https://github.com/ncats/gsrs3-main-deployment/wiki">Github Wiki Page</a>. Couldn't find the answer? Send us an <a href="javascript:;" routerLink="/about" fragment="contact"  class = "temp-color">email</a> and we will respond as soon as possible.</p>
   </div>
-
-
-
-
-
     </mat-card-content>
     </mat-card>
+
+    <mat-card class = "rdas-card section scroll-section">
+      <div class="width-50 width-md-80 width-75 section-header scroll-section" id="data" #data #scrollSection>
+        Data Downloads
+      </div>
+      <div class="section-content width-75">
+        <ul class = "data-list">
+          <li> <div class = "other-download"><a target="_self" href = "assets/downloads/dump-public-2025-03-06.gsrs" download = "dump-public-2025-03-06.gsrs">Full Public Data Dump (March, 2025)</a></div> 
+            <div class = "other-description">Full public GSRS data set. See the wiki on how to load into a GSRS instance</div> </li>
+      </ul>
+      </div>
+      </mat-card>
+    
 
     
     <mat-card class = "rdas-card section scroll-section">
@@ -147,18 +165,18 @@ class="navigation-menu-panel"
       </div>
       <div class="section-content width-75">
         <ul class = "other-list">
-          <li> <div class = "other-download"><a target="_self" href = "../../assets/downloads/GinasExcelTools.zip" download = "GinasExcelTools.zip">GSRS Excel Tools</a></div>
+          <li> <div class = "other-download"><a target="_self" href = "assets/downloads/GinasExcelTools.zip" download = "GinasExcelTools.zip">GSRS Excel Tools</a></div>
             <div class = "other-description">Excel add-in that allows you to retrieve data from a GSRS database into a spreadsheet or to push data from a spreadsheet into a GSRS database.</div> </li>
-          <li> <div class = "other-download"><a target="_self" href = "../../assets/downloads/dump-public-2025-03-06.gsrs" download = "dump-public-2025-03-06.gsrs">Full Public Data Dump (March, 2025)</a></div> 
-            <div class = "other-description">Full public GSRS data set. See the wiki on how to load into a GSRS instance</div> </li>
-          <li> <div class = "other-download"> <a target="_self" href = "../../assets/downloads/GSRS_data_dictionary_all_entities_2025-02-05.xls" download = "GSRS_data_dictionary_all_entities_2025-02-05.xls">GSRS Data Dictionary (Feb 5, 2025)</a></div> 
+          <li> <div class = "other-download"> <a target="_self" href = "assets/downloads/GSRS_data_dictionary_all_entities_2025-02-05.xls" download = "GSRS_data_dictionary_all_entities_2025-02-05.xls">GSRS Data Dictionary (Feb 5, 2025)</a></div> 
             <div class = "other-description">A list of all fields in the GSRS data model along with detailed descriptions and more</div></li>
-          <li> <div class = "other-download"> <a target="_self" href = "../../assets/downloads/GSRS_schema_2_0_0.json" download = "GSRS_schema_2_0_0.json">GSRS JSON schema (February 22, 2022)</a></div> 
+          <li> <div class = "other-download"> <a target="_self" href = "assets/downloads/GSRS_schema_2_0_0.json" download = "GSRS_schema_2_0_0.json">GSRS JSON schema (February 22, 2022)</a></div> 
             <div class = "other-description">JSON schema of the GSRS substance model</div></li>
-          <li> <div class = "other-download"><a target="_self" href = "../../assets/downloads/Substance Registration - October 2019.docx" download = "Substance Registration - October 2019.docx">Substance Registration Guide</a></div> 
+          <li> <div class = "other-download"><a target="_self" href = "assets/downloads/Substance Registration - October 2019.docx" download = "Substance Registration - October 2019.docx">Substance Registration Guide</a></div> 
             <div class = "other-description">A guide on registering substances using the GSRS application</div> </li>
       </ul>
       </div>
       </mat-card>
+
+
     </div>
 </div>

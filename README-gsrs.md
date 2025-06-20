@@ -52,3 +52,50 @@ At root update ts.config.json
 apps/gsrs/src/assets/data/dataReleases.json
 
 ```
+
+
+## How base-href is managed
+
+```
+
+# In app.config.ts
+
+import { APP_BASE_HREF } from "@angular/common";
+
+-- Add to providers: 
+{ provide: APP_BASE_HREF, useValue: '/yourbasepath/' },
+
+# In gsrs-theme.scss 
+
+$bash-href = '/yourbasepath/'
+
+# In scss files, example 
+
+background-image: url("#{$base-href}assets/gsrs-home/banner-pillcloud2.jpg");
+
+# In project.json 
+
+targets.build.options: 
+        ...
+        "baseHref": "/yourbasepath/",
+
+(necessary?)
+targets.build.configurations.production, 
+targets.build.configurations.development: 
+        ...
+        "baseHref": "/yourbasepath/",
+
+# make src, href links relative, examples 
+
+<img src="assets/myimage.png" ..
+<a href="assets/downloads/mydownload.xls" ...
+
+# When serving locally (no change)
+
+npx nx serve gsrs 
+
+# When building
+
+npx nx build gsrs --base-href=/yourbasepath/
+
+```

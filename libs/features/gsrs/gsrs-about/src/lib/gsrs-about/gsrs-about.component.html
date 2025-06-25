@@ -38,6 +38,17 @@
         <a
           mat-list-item
           class="list-button"
+          (click)="scroll(usinggsrs)"
+          [ngClass]="{ 'active-sidemenu': isActive('usinggsrs') }"
+        >
+          Using GSRS App/Data
+        </a>
+
+
+
+        <a
+          mat-list-item
+          class="list-button"
           (click)="scroll(contact)"
           [ngClass]="{ 'active-sidemenu': isActive('contact') }"
         >
@@ -151,6 +162,25 @@
           </p>
         </div>
     </div>
+
+
+      <div class="scroll-section" id="usinggsrs" #usinggsrs #scrollSection>
+        <div
+          class="section-header"
+          [ngClass]="{ 'active-sidemenu': isActive('usinggsrs') }"
+        >
+          Using GSRS App/Data
+        </div>
+        <div class="section-content">
+            <p>You can browse the GSRS app and data on the NCATS <a href="/ginas/app/ui/">GSRS instance</a>. For data, we periodically publish an <a  href="/downloads#data"> export of GSRS substances</a> in a Gzip/JSON format.</p> This would usually be imported into your own instance of GSRS using the "Legacy Data Manager" in the GSRS Admin panel. Alternatively, NCATS prepares a Mariadb dump of substance records that can be imported into an instance of GSRS that connects to a Mariadb database. If you sign up for Precision FDA, you can request access to the Mariadb data dump. The Mariadb option is quicker.
+            
+            <p>The <a href="https://precision.fda.gov/">Precision FDA</a> project at the Food and Drug Administration also runs an instance of GSRS and has some facilities for receiving new substance data from industry. 
+              
+            <p>In addition, <a href="https://precision.fda.gov/">Precision FDA</a> provides a simpler tabular dataset simply listing substance UNIIs and other codes as well as substance names <a href="https://precision.fda.gov/uniisearch">here.</a></p>
+
+        </div>
+    </div>
+
 
     <div class="scroll-section" id="contact" #contact #scrollSection>
         <div

@@ -74,7 +74,12 @@ export class AppComponent {
     {
       link: 'downloads',
       label: 'DOWNLOADS',
-    }];
+    },
+    // {
+    //   link: 'privacy',
+    //   label: 'PRIVACY',
+    // }
+  ];
 
   closeSidenav() {
     if (this.header) {

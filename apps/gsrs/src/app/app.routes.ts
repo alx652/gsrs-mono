@@ -29,4 +29,12 @@ export const routes: Route[] = [
             (m) => m.GsrsDownloadsComponent
           ),
       },
+      {
+        path: 'privacy',
+        loadComponent: () =>
+        import('libs/features/gsrs/gsrs-privacy-page/src/lib/gsrs-privacy-page/gsrs-privacy-page.component').then(
+            (m) => m.GsrsPrivacyPageComponent
+          ),
+      },
+  
 ];

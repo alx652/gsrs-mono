@@ -14,6 +14,7 @@ while ( defined ( my $file = $iterator->() ) ) {
        $zip->addFile( $file) if (! -d $file);
    }
 }
+$zip->addFile( 'downloads/index.html');
 unless ( $zip->writeToFileNamed('../temp.zip') == AZ_OK ) {
     die 'write error';
 }

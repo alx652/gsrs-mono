@@ -78,6 +78,10 @@ export class AppComponent {
     // {
     //   link: 'privacy',
     //   label: 'PRIVACY',
+    // },
+    // {
+    //   link: 'licensing',
+    //   label: 'LICENSING',
     // }
   ];
 

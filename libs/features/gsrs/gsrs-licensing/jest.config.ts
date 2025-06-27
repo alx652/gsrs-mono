@@ -3,7 +3,7 @@ export default {
   displayName: 'gsrs-licensing',
   preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../../coverage/libs/features/gsrs/gsrs-api',
+  coverageDirectory: '../../../../coverage/libs/features/gsrs/gsrs-licensing',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

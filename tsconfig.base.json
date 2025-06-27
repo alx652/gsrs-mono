@@ -175,6 +175,7 @@
       ],
       "generic-chart": ["libs/shared/utils/charts/generic-chart/src/index.ts"],
       "gsrs-about": ["libs/features/gsrs/gsrs-about/src/index.ts"],
+      "gsrs-licensing": ["libs/features/gsrs/gsrs-licensing/src/index.ts"],
       "gsrs-api": ["libs/features/gsrs/gsrs-api/src/index.ts"],
       "gsrs-downloads": ["libs/features/gsrs/gsrs-downloads/src/index.ts"],
       "gsrs-home": ["libs/features/gsrs/gsrs-home/src/index.ts"],

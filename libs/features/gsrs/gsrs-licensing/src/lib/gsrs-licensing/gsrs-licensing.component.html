@@ -1,0 +1,79 @@
+<mat-sidenav-container class="licensing-page" >
+  <mat-sidenav
+    #navigationsidenav
+    class="navigation-menu-panel"
+    [opened]="!mobile"
+    [mode]="'side'"
+  >
+    <div class="toc-wrapper" cdkScrollable>
+    <div class="toc">
+      <div class="row right-justified-row">
+        <button
+          [color]="'primary'"
+          mat-icon-button
+          class="close-button"
+          aria-label="close filters"
+          (click)="navigationsidenav.toggle()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <mat-nav-list>
+        <a
+          mat-list-item
+          class="list-button"
+          (click)="scroll(licensing)"
+          [ngClass]="{ 'active-sidemenu': isActive('licensing') }"
+        >
+          Licensing
+        </a>
+      </mat-nav-list>
+    </div>
+  </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="drawer-container-content" >
+    @if (!navigationsidenav.opened) {
+    <div class="row">
+      <button
+        [color]="'primary'"
+        mat-stroked-button
+        class="menu-button"
+        aria-label="menu button"
+        (click)="navigationsidenav.toggle()"
+      >
+        Jump to...<mat-icon>bookmark</mat-icon>
+      </button>
+    </div>
+    }
+    <div class="row centered-row">
+      <div [ngClass]="{ 'full-width': navigationsidenav.opened, 'width-70': !navigationsidenav.opened }">
+    <div class="row">
+      <div>
+        <h1 class="rdas-title"><b>Licensing</b>: Global Substance Registration System</h1>
+      </div>
+    </div>
+    <div class="scroll-section" id="licensing" #licensing #scrollSection>
+        <div
+          class="section-header"
+          [ngClass]="{ 'active-sidemenu': isActive('licensing') }"
+        >
+          Licensing GSRS
+        </div>
+        <div class="section-content">
+
+          <p>Unless otherwise noted, the data provided by GSRS is public domain and made available with a Creative Commons CC0 1.0 Universal dedication.
+          Under CC0, NCATS has dedicated the work to the public domain by waiving all rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.</p>
+
+          <p>The content, documentation, code, and related materials provided by GSRS is licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+          <p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+
+          <p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License </p>
+        </div>
+    <div class="spacer"></div>
+  </div>
+    </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

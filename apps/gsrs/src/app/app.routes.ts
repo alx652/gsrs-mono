@@ -30,6 +30,13 @@ export const routes: Route[] = [
           ),
       },
       {
+        path: 'licensing',
+        loadComponent: () =>
+        import('libs/features/gsrs/gsrs-licensing/src/lib/gsrs-licensing/gsrs-licensing.component').then(
+          (m) => m.GsrsLicensingComponent
+          ),
+      },
+      {
         path: 'privacy',
         loadComponent: () =>
         import('libs/features/gsrs/gsrs-privacy-page/src/lib/gsrs-privacy-page/gsrs-privacy-page.component').then(

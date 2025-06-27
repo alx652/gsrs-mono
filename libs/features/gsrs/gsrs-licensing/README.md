@@ -1,4 +1,4 @@
-# gsrs-liscensing
+# gsrs-licensing
 
 This library was generated with [Nx](https://nx.dev).
 

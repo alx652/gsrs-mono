@@ -37,16 +37,6 @@ class="navigation-menu-panel"
     <a
       mat-list-item
       class="list-button"
-      (click)="scroll(data)"
-      [ngClass]="{ 'active-sidemenu': isActive('data') }"
-    >
-      Data Downloads
-    </a>
-
-
-    <a
-      mat-list-item
-      class="list-button"
       (click)="scroll(other)"
       [ngClass]="{ 'active-sidemenu': isActive('other') }"
     >
@@ -84,42 +74,67 @@ class="navigation-menu-panel"
           Releases
         </div>
         <div class="width-50 width-md-80 section-subheader">
-          G-SRS v3.1.2 (June 2025)
+          G-SRS v3.1.1 (November  2024)
         </div>
         <mat-card-content >
           <div class="width-75 width-md-80 section-content">
             
- 
             <div class = "section-sub-subheader">CHANGELOG</div>
-            
-            <p>GSRS v3.1.2 has substantial code and organizational changes.  Make sure to read the documentation on the new approaches to configuration before upgrading.</p>     
+              <p>In GSRS 3.1.1 software release was intended to be a minor release with the <a href = "https://github.com/ncats/gsrs3-main-deployment/wiki"> wiki in the public deployment repo on GitHub</a> as the main focus of this release. However, it has become much more than that. We accomplished new exciting features, improvements on existing features and bug fixes than we planned.</p>  
 
-  <b>Highlighted new features include:</b>
+<b>Highlighted new features include:</b>
 
-  <ul>
-    <li>Spring Boot upgrade from 2.4.5 to 2.7.18</li>
-    <li>Revamp HOCON configuration; use environment variables and overrides</li>
-    <li>Configure GSRS extensions as map lists instead numerated lists to allow for overrides</li>
-    <li>Cross entity search</li>
-    <li>Structure search improvements</li>
-    <li>Nitrosamines flow chart</li>
-    <li>Product module Improvements</li>
-    <li>SSG1 Improvements</li>
-    <li>Impurities Improvements</li>
-  </ul>
-    
+<ul>
+<li>GSRS wiki
+    </li>
+<li>In-Vitro Pharm Service
+    </li>
+<li>Ketcher as an extra chemical structure editor
+    </li>
+<li>Facet Improvements
+    </li>
+<li>Index Auto-synchronization
+    </li>
+<li>Product module
+    </li>
+<li>Impurities module
+    </li>
+	</ul>
+
   <b>Highlighted improvements and bug fixes include:</b>
-
-  <ul>
-    <li>A new Exporter: SQL Exporter</li>
-    <li>ScheduledExportTask for non-substance services </li>
-    <li>Two InChIKeys for racemates and epimers</li>
-    <li>Show changes between two adjacent versions a substance</li>
-    <li>PDF download option</li>
-  </ul>
+<ul>
+<li>Flex Searching
+    </li>
+<li>Validator config
+    </li>
+<li>Reindex Flag
+    </li>
+<li>Configurable SubstanceFieldNameDecorator
+    </li>
+<li>Rebackup Entity
+    </li>
+<li>Access groups configuration option for code creation
+    </li>
+<li>Endpoints PreAuthorization
+    </li>
+<li>Extensions to the Definition of Structurally Diverse Substances
+    </li>
+<li>Consider disulfide bonds When Computing the Molecular Formula for a Protein
+    </li>
+<li>Reindex Flag
+    </li>
+<li>Change hot GSRS is Run/Built
+    </li>
+<li>Handling of Large Structures
+    </li>
+<li>Extensions to the Definition of Structurally Diverse Substances
+    </li>
+<li>Nitrosamine risk estimation
+    </li>
+	</ul>
 
   <div class = "section-sub-subheader">Full Release Notes</div><br/>
-  Download the full <a href = "https://github.com/ncats/gsrs3-main-deployment/blob/main/docs/release%20notes/GSRS%203.1.2%20Release%20Notes.docx">GSRS v3.1.2 Release Notes</a> for more information on the changes and more.
+  Download the full <a href = "https://github.com/ncats/gsrs3-main-deployment/blob/main/docs/release%20notes/GSRS%203.1.1%20Release%20Notes.docx">GSRS v3.1.1 Release Notes</a> for more information on the changes and more.
 
   <br/><br/>
   </div>
@@ -128,7 +143,7 @@ class="navigation-menu-panel"
     </div><br/>
     <div class="width-50 width-md-80 section-content">
       
-    The GSRS version 3.1.2 can be cloned to your local computer system using:
+    The GSRS version 3.1.1 can be found cloned locally using
 
     <br/><br/><code>git clone https://github.com/ncats/gsrs3-main-deployment</code><br/><br/>
 
@@ -140,23 +155,15 @@ class="navigation-menu-panel"
     Questions
     </div><br/>
     <div class="width-50 width-md-80 section-content">      
-      <p> Have a deployment related question? First, be sure to check our <a href = "https://github.com/ncats/gsrs3-main-deployment/wiki">GitHub Wiki Page</a>. Couldn't find the answer? Send us an <a href="javascript:;" routerLink="/about" fragment="contact"  class = "temp-color">email</a> and we will respond as soon as possible.</p>
+      <p> Have a deployment related question? First, be sure to check our <a href = "https://github.com/ncats/gsrs3-main-deployment/wiki">Github Wiki Page</a>. Couldn't find the answer? Send us an <a href="javascript:;" routerLink="/about" fragment="contact"  class = "temp-color">email</a> and we will respond as soon as possible.</p>
   </div>
+
+
+
+
+
     </mat-card-content>
     </mat-card>
-
-    <mat-card class = "rdas-card section scroll-section">
-      <div class="width-50 width-md-80 width-75 section-header scroll-section" id="data" #data #scrollSection>
-        Data Downloads
-      </div>
-      <div class="section-content width-75">
-        <ul class = "data-list">
-          <li> <div class = "other-download"><a target="_self" href = "assets/downloads/dump-public-2025-03-06.gsrs" download = "dump-public-2025-03-06.gsrs">Full Public Data Dump (March, 2025)</a></div> 
-            <div class = "other-description">Full public GSRS data set. See the wiki on how to load into a GSRS instance</div> </li>
-      </ul>
-      </div>
-      </mat-card>
-    
 
     
     <mat-card class = "rdas-card section scroll-section">
@@ -165,18 +172,18 @@ class="navigation-menu-panel"
       </div>
       <div class="section-content width-75">
         <ul class = "other-list">
-          <li> <div class = "other-download"><a target="_self" href = "assets/downloads/GinasExcelTools.zip" download = "GinasExcelTools.zip">GSRS Excel Tools</a></div>
+          <li> <div class = "other-download"><a target="_self" href = "../../assets/downloads/GinasExcelTools.zip" download = "GinasExcelTools.zip">GSRS Excel Tools</a></div>
             <div class = "other-description">Excel add-in that allows you to retrieve data from a GSRS database into a spreadsheet or to push data from a spreadsheet into a GSRS database.</div> </li>
-          <li> <div class = "other-download"> <a target="_self" href = "assets/downloads/GSRS_data_dictionary_all_entities_2025-02-05.xls" download = "GSRS_data_dictionary_all_entities_2025-02-05.xls">GSRS Data Dictionary (Feb 5, 2025)</a></div> 
+          <li> <div class = "other-download"><a target="_self" href = "../../assets/downloads/dump-public-2025-03-06.gsrs" download = "dump-public-2025-03-06.gsrs">Full Public Data Dump (March, 2025)</a></div> 
+            <div class = "other-description">Full public GSRS data set. See the wiki on how to load into a GSRS instance</div> </li>
+          <li> <div class = "other-download"> <a target="_self" href = "../../assets/downloads/GSRS_data_dictionary_all_entities_2025-02-05.xls" download = "GSRS_data_dictionary_all_entities_2025-02-05.xls">GSRS Data Dictionary (Feb 5, 2025)</a></div> 
             <div class = "other-description">A list of all fields in the GSRS data model along with detailed descriptions and more</div></li>
-          <li> <div class = "other-download"> <a target="_self" href = "assets/downloads/GSRS_schema_2_0_0.json" download = "GSRS_schema_2_0_0.json">GSRS JSON schema (February 22, 2022)</a></div> 
+          <li> <div class = "other-download"> <a target="_self" href = "../../assets/downloads/GSRS_schema_2_0_0.json" download = "GSRS_schema_2_0_0.json">GSRS JSON schema (February 22, 2022)</a></div> 
             <div class = "other-description">JSON schema of the GSRS substance model</div></li>
-          <li> <div class = "other-download"><a target="_self" href = "assets/downloads/Substance Registration - October 2019.docx" download = "Substance Registration - October 2019.docx">Substance Registration Guide</a></div> 
+          <li> <div class = "other-download"><a target="_self" href = "../../assets/downloads/Substance Registration - October 2019.docx" download = "Substance Registration - October 2019.docx">Substance Registration Guide</a></div> 
             <div class = "other-description">A guide on registering substances using the GSRS application</div> </li>
       </ul>
       </div>
       </mat-card>
-
-
     </div>
 </div>

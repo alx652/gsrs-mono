@@ -1,5 +1,11 @@
 {
     "Datasets":[
+     {
+        "date": "20250703",
+        "filename": "dump-public-2025-07-03.gsrs",
+        "records": 169060,
+        "formattedDate": ""
+    },
     {
         "date": "20250306",
         "filename": "dump-public-2025-03-06.gsrs",

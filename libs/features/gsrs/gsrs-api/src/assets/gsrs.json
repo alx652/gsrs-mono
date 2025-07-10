@@ -12,9 +12,8 @@
       "url": "https://www.apache.org/licenses/LICENSE-2.0"
     }
   },
-
   "host": "gsrs.ncats.nih.gov",
-  "basePath": "/ginas/app/api/v1",
+  "basePath": "/ginas/app",
   "produces": ["application/json"],
   "tags": [
     {
@@ -43,11 +42,15 @@
     },
     {
       "name": "user saved list",
-      "description": "Create, retrive, update, and delete user saved list"
+      "description": "Create, retrieve, update, and delete user saved list"
     },
     {
       "name": "Administrative",
       "description": "User and data management, back-end tasks and info"
+    },
+    {
+      "name": "service info",
+      "description": "Provide information about an individual service, provide GSRS Gateway-friendly paths to actuator endpoints. Note that service context is different from the entity context. The service is typically equal the value of 'application.name' in the service's configuration and in turn equal to the folder name in gsrs3-main-deployment where the service CI code lives."
     }
   ],
   "schemes": ["https"],
@@ -67,7 +70,7 @@
   },
   "paths": {
     
-    "/substances": {
+    "/api/v1/substances": {
       "get": {
         "tags": ["browse"],
         "summary": "Get all substance records",
@@ -145,7 +148,7 @@
         }
       }
     },
-	"/substances/novalid": {
+	"/api/v1/substances/novalid": {
 		"put": {
         "tags": ["create and update"],
         "summary": "Update a substance record",
@@ -180,7 +183,7 @@
         }
       }
 	},
-    "/vocabularies": {
+    "/api/v1/vocabularies": {
       "get": {
         "tags": [
           "browse"
@@ -194,7 +197,7 @@
         }
       }
     },
-    "/vocabularies/@validate": {
+    "/api/v1/vocabularies/@validate": {
       "post": {
         "tags": [
           "create and update"
@@ -229,7 +232,7 @@
         }
       }
     },
-    "/substances({id})": {
+    "/api/v1/substances({id})": {
       "get": {
         "tags": ["details"],
         "summary": "Get a substance by id",
@@ -255,7 +258,7 @@
         }
       }
     },
-    "/substances({name})": {
+    "/api/v1/substances({name})": {
       "get": {
         "tags": ["details"],
         "summary": "Get a substance by name",
@@ -281,7 +284,7 @@
         }
       }
     },
-    "/substances({id})/names": {
+    "/api/v1/substances({id})/names": {
       "get": {
         "tags": ["details"],
         "summary": "Get names for a substance",
@@ -307,7 +310,7 @@
         }
       }
     },
-    "/substances({uuid})/codes": {
+    "/api/v1/substances({uuid})/codes": {
       "get": {
         "tags": ["details"],
         "summary": "Get codes for a substance",
@@ -333,7 +336,7 @@
         }
       }
     },
-    "/substances({id})/codes($0)": {
+    "/api/v1/substances({id})/codes($0)": {
       "get": {
         "tags": ["details"],
         "summary": "Get the first code object",
@@ -359,7 +362,7 @@
         }
       }
     },
-    "/substances({id})/codes($0)/code": {
+    "/api/v1/substances({id})/codes($0)/code": {
       "get": {
         "tags": ["details"],
         "summary": "Get the first code object's code string",
@@ -385,7 +388,7 @@
         }
       }
     },
-    "/substances({id})/names(type:of)": {
+    "/api/v1/substances({id})/names(type:of)": {
       "get": {
         "tags": ["details"],
         "summary": "Get official names",
@@ -411,7 +414,7 @@
         }
       }
     },
-    "/substances({id})/names!(name)": {
+    "/api/v1/substances({id})/names!(name)": {
       "get": {
         "tags": ["details"],
         "summary": "Get JSONArray of 'name' string",
@@ -437,7 +440,7 @@
         }
       }
     },
-    "/substances({id})/names(type:cn)!(name)": {
+    "/api/v1/substances({id})/names(type:cn)!(name)": {
       "get": {
         "tags": ["details"],
         "summary": "Get JSONArray of common names",
@@ -463,7 +466,7 @@
         }
       }
     },
-    "/substances({id})/names(type:cn)!(name)!limit(1)": {
+    "/api/v1/substances({id})/names(type:cn)!(name)!limit(1)": {
       "get": {
         "tags": ["details"],
         "summary": "Get JSONArray of first common name",
@@ -489,7 +492,7 @@
         }
       }
     },
-    "/substances({id})/names(type:cn)!(name)!skip(1)!limit(1)": {
+    "/api/v1/substances({id})/names(type:cn)!(name)!skip(1)!limit(1)": {
       "get": {
         "tags": ["details"],
         "summary": "Get JSONArray of first common name, skipping first value",
@@ -515,7 +518,7 @@
         }
       }
     },
-    "/substances({id})/names!sort(created)": {
+    "/api/v1/substances({id})/names!sort(created)": {
       "get": {
         "tags": ["details"],
         "summary": "Get JSONArray of names by creation date (ascending)",
@@ -541,7 +544,7 @@
         }
       }
     },
-    "/substances({id})/names!revsort(created)": {
+    "/api/v1/substances({id})/names!revsort(created)": {
       "get": {
         "tags": ["details"],
         "summary": "Get JSONArray of names by creation date (descending)",
@@ -567,7 +570,7 @@
         }
       }
     },
-    "/substances({id})/names!(createdBy)!distinct()": {
+    "/api/v1/substances({id})/names!(createdBy)!distinct()": {
       "get": {
         "tags": ["details"],
         "summary": "JSONArray of users who created a name",
@@ -593,7 +596,7 @@
         }
       }
     },
-    "/substances({id})/structure/molfile": {
+    "/api/v1/substances({id})/structure/molfile": {
       "get": {
         "tags": ["details"],
         "summary": "Get molfile for a structure",
@@ -619,7 +622,7 @@
         }
       }
     },
-    "/substances({id})/structure/$molfile": {
+    "/api/v1/substances({id})/structure/$molfile": {
       "get": {
         "tags": ["details"],
         "summary": "Get raw text for the molfile of a structure",
@@ -645,7 +648,7 @@
         }
       }
     },
-    "/substances({id})/structure!$inchikey()": {
+    "/api/v1/substances({id})/structure!$inchikey()": {
       "get": {
         "tags": ["details"],
         "summary": "Get InChIKey for a structure",
@@ -671,7 +674,7 @@
         }
       }
     },
-    "/substances({id})/names!count()": {
+    "/api/v1/substances({id})/names!count()": {
       "get": {
         "tags": ["details"],
         "summary": "Get name count",
@@ -697,7 +700,7 @@
         }
       }
     },
-    "/substances({id})/names!group(type)": {
+    "/api/v1/substances({id})/names!group(type)": {
       "get": {
         "tags": ["details"],
         "summary": "Get map of names grouped by name types",
@@ -723,7 +726,7 @@
         }
       }
     },
-    "/substances({id})/@hierarchy": {
+    "/api/v1/substances({id})/@hierarchy": {
       "get": {
         "tags": ["details"],
         "summary": "Get substance relationship hierarchy",
@@ -749,7 +752,7 @@
         }
       }
     },
-	"/suggest?q=ibupro": {
+	"/api/v1/suggest?q=ibupro": {
       "get": {
         "tags": [
           "text search"
@@ -767,7 +770,7 @@
         }
       }
     },
-    "/substances/search?q=ASPIRIN": {
+    "/api/v1/substances/search?q=ASPIRIN": {
       "get": {
         "tags": ["text search"],
         "summary": "Global search for word \"ASPIRIN\"",
@@ -780,7 +783,7 @@
         }
       }
     },
-    "/substances/search?q=root_approvalID:R16CO5Y76E": {
+    "/api/v1/substances/search?q=root_approvalID:R16CO5Y76E": {
       "get": {
         "tags": ["text search"],
         "summary": "Search Substance by approvlID, which in the default FDA-seeded system is equivalent to the UNII code.",
@@ -793,7 +796,7 @@
         }
       }
     },
-    "/substances/search?q=root_names_name:OXYTOCIN": {
+    "/api/v1/substances/search?q=root_names_name:OXYTOCIN": {
       "get": {
         "tags": ["text search"],
         "summary": "Search for \"OXYTOCIN\" inside of a name",
@@ -806,7 +809,7 @@
         }
       }
     },
-    "/substances/search?q=OXYTOCIN%20AND%20root_codes_codeSystem:WIKIPEDIA": {
+    "/api/v1/substances/search?q=OXYTOCIN%20AND%20root_codes_codeSystem:WIKIPEDIA": {
       "get": {
         "tags": ["text search"],
         "summary": "Substance search for \"OXYTOCIN\" within codes which also have codesystem containing \"WIKIPEDIA\"",
@@ -819,7 +822,7 @@
         }
       }
     },
-    "/substances/search?q=root_names_name:\"%5EOXYTOCIN%24\"": {
+    "/api/v1/substances/search?q=root_names_name:\"%5EOXYTOCIN%24\"": {
       "get": {
         "tags": ["text search"],
         "summary": "Exact name Search for \"OXYTOCIN\"",
@@ -832,7 +835,7 @@
         }
       }
     },
-    "/substances/search?q=OXYTO*": {
+    "/api/v1/substances/search?q=OXYTO*": {
       "get": {
         "tags": ["text search"],
         "summary": "substance search starting with \"OXYTO\"",
@@ -845,7 +848,7 @@
         }
       }
     },
-    "/substances/search?q=\"APT-101*\"": {
+    "/api/v1/substances/search?q=\"APT-101*\"": {
       "get": {
         "tags": ["text search"],
         "summary": "substance search starting with \"APT-101\"",
@@ -858,7 +861,7 @@
         }
       }
     },
-    "/substances/search?q=root_names_name:\"*2-Dimethyl*\"": {
+    "/api/v1/substances/search?q=root_names_name:\"*2-Dimethyl*\"": {
       "get": {
         "tags": ["text search"],
         "summary": "substance search containing \"2-Dimethyl\"",
@@ -871,7 +874,7 @@
         }
       }
     },
-    "/substances/search?q=ASPIRIN%20ESTER": {
+    "/api/v1/substances/search?q=ASPIRIN%20ESTER": {
       "get": {
         "tags": ["text search"],
         "summary": "Substance search with words \"ESTER\" or \"ASPIRIN\"",
@@ -884,7 +887,7 @@
         }
       }
     },
-    "/substances/search?q=ASPIRIN%20AND%20ESTER": {
+    "/api/v1/substances/search?q=ASPIRIN%20AND%20ESTER": {
       "get": {
         "tags": ["text search"],
         "summary": "Substance search with words \"ESTER\" and \"ASPIRIN\"",
@@ -897,7 +900,7 @@
         }
       }
     },
-	"/substances/search?q=*MAB&facet=Substance%20Class%2Fprotein": {
+	"/api/v1/substances/search?q=*MAB&facet=Substance%20Class%2Fprotein": {
       "get": {
         "tags": ["text search"],
         "summary": "Substance search for words that end in \"MAB\" and are restricted to proteins.",
@@ -910,7 +913,7 @@
         }
       }
     },
-	"/substances/search?q=*MAB&facet=Substance%20Class%2Fprotein&facet=ATC%20Level%201%2FRESPIRATORY%20SYSTEM": {
+	"/api/v1/substances/search?q=*MAB&facet=Substance%20Class%2Fprotein&facet=ATC%20Level%201%2FRESPIRATORY%20SYSTEM": {
       "get": {
         "tags": ["text search"],
         "summary": "Substance search for words that end in \"MAB\" and are restricted to proteins with ATC level 1 code in \"RESPRITORY SYSTEM\".",
@@ -923,7 +926,7 @@
         }
       }
     },
-  "/substances/@bulkQuery": {
+  "/api/v1/substances/@bulkQuery": {
       "get": {
         "tags": ["text search"],
         "summary": "Get queries from the query list id.",
@@ -1007,7 +1010,7 @@
         }
       }
     },
-  "/substances/bulkSearch": {
+  "/api/v1/substances/bulkSearch": {
       "get": {
         "tags": ["text search"],
         "summary": "bulk search on saved query list.",
@@ -1071,7 +1074,7 @@
         }
       }
     },
-  "/substances/structureSearch?q=COCN": {
+  "/api/v1/substances/structureSearch?q=COCN": {
       "get": {
         "tags": ["chemical search"],
         "summary": "Substructure search for SMILES/SMARTS string \"COCN\" -  Async",
@@ -1084,7 +1087,7 @@
         }
       }
     },
-    "/substances/structureSearch?q=COCN&sync=true": {
+    "/api/v1/substances/structureSearch?q=COCN&sync=true": {
       "get": {
         "tags": ["chemical search"],
         "summary": "Substructure search for SMILES/SMARTS string \"COCN\" - Sync",
@@ -1097,7 +1100,7 @@
         }
       }
     },
-    "/substances/structureSearch?q=CCOC(N)=O&type=sim&cutoff=0.6": {
+    "/api/v1/substances/structureSearch?q=CCOC(N)=O&type=sim&cutoff=0.6": {
       "get": {
         "tags": ["chemical search"],
         "summary": "Searches for similar structures to SMILES \"CCOC(N)=O\"",
@@ -1110,7 +1113,7 @@
         }
       }
     },
-    "/substances/structureSearch?q=CCOC(N)=O&type=exact": {
+    "/api/v1/substances/structureSearch?q=CCOC(N)=O&type=exact": {
       "get": {
          "tags": ["chemical search"],
         "summary": "Searches substances for structure equivalent to SMILES string \"CCOC(N)=O\".",
@@ -1123,7 +1126,7 @@
         }
       }
     },
-	"/substances/structureSearch?q=Cl&type=flex": {
+	"/api/v1/substances/structureSearch?q=Cl&type=flex": {
       "get": {
          "tags": ["chemical search"],
         "summary": "Searches substances for disconnected moiety equivalent to SMILES string \"Cl\".",
@@ -1136,7 +1139,7 @@
         }
       }
     },
-	"/suggest/@fields": {
+	"/api/v1/suggest/@fields": {
       "get": {
         "tags": [
           "meta search"
@@ -1154,7 +1157,7 @@
         }
       }
     },
-    "/substances/search/@facets?q=ASPIRIN&field=Code+System": {
+    "/api/v1/substances/search/@facets?q=ASPIRIN&field=Code+System": {
       "get": {
         "tags": ["meta search"],
         "summary": "Search for \"ASPIRIN\" with \"Code System\" facet",
@@ -1167,7 +1170,7 @@
         }
       }
     },
-    "/substances/search/@facets?q=ASPIRIN&field=Code+System&ffilter=W*": {
+    "/api/v1/substances/search/@facets?q=ASPIRIN&field=Code+System&ffilter=W*": {
       "get": {
         "tags": ["meta search"],
         "summary": "Search for \"ASPIRIN\" with \"Code System\" facet values start with \"W\"",
@@ -1180,7 +1183,7 @@
         }
       }
     },
-    "/substances/search/@facets?q=ASPIRIN&field=Code+System&ffilter=count:%5B0%20TO%201%5D": {
+    "/api/v1/substances/search/@facets?q=ASPIRIN&field=Code+System&ffilter=count:%5B0%20TO%201%5D": {
         "get": {
         "tags": ["meta search"],
         "summary": "Search for \"ASPIRIN\" with \"Code System\" facet count between 0 and 1",
@@ -1193,7 +1196,7 @@
         }
       }
     },
-    "/substances/@validate": {
+    "/api/v1/substances/@validate": {
       "post": {
         "tags": [
           "create and update"
@@ -1228,7 +1231,7 @@
         }
       }
     },
-    "/substances({uuid})/@approve":{
+    "/api/v1/substances({uuid})/@approve":{
         "get": {
           "tags": [
            "create and update"
@@ -1266,7 +1269,7 @@
           }
         }
     },
-    "/substances/@userLists/currentUser": {
+    "/api/v1/substances/@userLists/currentUser": {
       "get": {
         "tags": ["user saved list"],
         "summary": "Get the names of all the user saved lists owned by current user.",
@@ -1292,7 +1295,7 @@
         }
       }
     },
-    "/substances/@userLists/otherUser": {
+    "/api/v1/substances/@userLists/otherUser": {
       "get": {
         "tags": ["user saved list"],
         "summary": "ADMIN ROLE ONLY! Get all the names of user saved lists of owned by a specified user.",
@@ -1324,7 +1327,7 @@
         }
       }
     },
-    "/substances/@userList/{list}": {
+    "/api/v1/substances/@userList/{list}": {
       "get": {
         "tags": ["user saved list"],
         "summary": "Get the list(specified in the path) content of current user.",
@@ -1350,7 +1353,7 @@
         }
       }
     },
-    "/substances/@userList/{user}/{list}": {
+    "/api/v1/substances/@userList/{user}/{list}": {
       "get": {
         "tags": ["user saved list"],
         "summary": "ADMIN ROLE ONLY! Get the user saved list(specified in the path) content of the user(specified in the path).",
@@ -1376,7 +1379,7 @@
         }
       }
     },
-    "/substances/@userList/keys": {
+    "/api/v1/substances/@userList/keys": {
       "post": {
         "tags": ["user saved list"],
         "summary": "Create a user saved list with list of UUIDs of the substances in the body, separated by comma. For example, deb33005-e87e-4e7f-9704-d5b4c80d3023,79dbcc59-e887-40d1-a0e3-074379b755e4.",
@@ -1407,7 +1410,7 @@
         }
       }
     },
-    "/substances/@userList/etag/{etagId}": {
+    "/api/v1/substances/@userList/etag/{etagId}": {
       "post": {
         "tags": ["user saved list"],
         "summary": "Create a user saved list with etag with the specified etag id. For example, @userList/7c9f73c931335ca3?listName=\"myList\".",
@@ -1431,7 +1434,7 @@
         }
       }
     },
-    "/substances/@userList/currentUser/etag/{etagId}": {
+    "/api/v1/substances/@userList/currentUser/etag/{etagId}": {
       "put": {
         "tags": ["user saved list"],
         "summary": "Add more substances to the user saved list using etag.",
@@ -1458,7 +1461,7 @@
         }
       }
     },
-    "/substances/@userList/currentUser": {
+    "/api/v1/substances/@userList/currentUser": {
         "put": {
           "tags": ["user saved list"],
           "summary": "Update the user saved list by adding more substances to the list or remove substances from the list.",
@@ -1524,7 +1527,7 @@
         }
       }
     }, 
-    "/substances/@userList/otherUser": {
+    "/api/v1/substances/@userList/otherUser": {
       "put": {
         "tags": ["user saved list"],
         "summary": "ADMIN ROLE ONLY! Update the user saved list by adding more substances to the list or remove substances from the list.",
@@ -1601,7 +1604,7 @@
         }
       }
     },
-    "/substances/@userList/status/{id}": {
+    "/api/v1/substances/@userList/status/{id}": {
       "get": {
         "tags": ["user saved list"],
         "summary": "Get the status of a saving or updating user saved list process.",
@@ -1618,7 +1621,7 @@
         }
       }
     },
-    "/substances/@databaseIndexDiff": {
+    "/api/v1/substances/@databaseIndexDiff": {
       "get": {
         "tags": ["rebackup and reindex"],
         "summary": "Get the difference between database and indexes",
@@ -1635,7 +1638,7 @@
         }
       }
     },
-    "/substances/@databaseIndexSync": {
+    "/api/v1/substances/@databaseIndexSync": {
       "put": {
         "tags": ["rebackup and reindex"],
         "summary": "Reindex substances records that are in database, but not in indexes",
@@ -1652,7 +1655,7 @@
         }
       }
     },
-    "/substances/@databaseIndexSync({id})": {
+    "/api/v1/substances/@databaseIndexSync({id})": {
       "get": {
         "tags": ["rebackup and reindex"],
         "summary": "Get the reindex job status.",
@@ -1669,7 +1672,7 @@
         }
       }
     },
-    "/substances/({id})/@rebackup": {
+    "/api/v1/substances/({id})/@rebackup": {
       "get": {
         "tags": ["rebackup and reindex"],
         "summary": "Rebackup the record specified by id.",
@@ -1686,7 +1689,7 @@
         }
       }
     },
-    "/substances/@rebackup": {
+    "/api/v1/substances/@rebackup": {
       "put": {
         "tags": ["rebackup and reindex"],
         "summary": "Rebackup the records specified by the list of ids.",
@@ -1708,7 +1711,7 @@
         }
       }
     },
-    "/substances/({id})/@rebackupAndReindex": {
+    "/api/v1/substances/({id})/@rebackupAndReindex": {
       "get": {
         "tags": ["rebackup and reindex"],
         "summary": "Rebackup and reindex the record specified by id.",
@@ -1725,7 +1728,7 @@
         }
       }
     },
-    "/substances/@rebackupAndReindex": {
+    "/api/v1/substances/@rebackupAndReindex": {
       "put": {
         "tags": ["rebackup and reindex"],
         "summary": "Rebackup the records specified by the list of ids.",
@@ -1747,7 +1750,7 @@
         }
       }
     },
-    "/scheduledjobs": {
+    "/api/v1/scheduledjobs": {
       "get": {
         "tags": [
           "Administrative"
@@ -1765,7 +1768,7 @@
         }
       }
     },
-    "/scheduledjobs({id})": {
+    "/api/v1/scheduledjobs({id})": {
       "get": {
         "tags": [
           "Administrative"
@@ -1794,7 +1797,7 @@
         }
       }
     },
-    "/health/info": {
+    "/api/v1/health/info": {
       "get": {
         "tags": [
           "Administrative"
@@ -1815,7 +1818,7 @@
         }
       }
     },
-    "/users": {
+    "/api/v1/users": {
       "get": {
         "tags": [
           "Administrative"
@@ -1836,7 +1839,7 @@
         }
       }
     },
-    "/users({id})": {
+    "/api/v1/users({id})": {
       "get": {
         "tags": [
           "Administrative"
@@ -1863,7 +1866,7 @@
         }
       }
     },
-    "/users/{user}": {
+    "/api/v1/users/{user}": {
       "delete": {
         "tags": [
           "Administrative"
@@ -1946,7 +1949,7 @@
         }
       }
     },
-    "/users/{user}/password": {
+    "/api/v1/users/{user}/password": {
       "post": {
         "tags": [
           "Administrative"
@@ -1978,7 +1981,7 @@
         }
       }
     },
-    "/profile/password": {
+    "/api/v1/profile/password": {
       "post": {
         "tags": [
           "Administrative"
@@ -2046,7 +2049,7 @@
         }
       }
     },
-    "/jobs/{id}": {
+    "/api/v1/jobs/{id}": {
       "get": {
         "tags": [
           "Administrative"
@@ -2073,7 +2076,7 @@
         }
       }
     },
-    "/{search}/export/{etag}": {
+    "/api/v1/{search}/export/{etag}": {
       "get": {
         "tags": [
           "Administrative"
@@ -2102,7 +2105,7 @@
         }
       }
     },
-    "/{search}/export/{etag}/{format}?{filename}": {
+    "/api/v1/{search}/export/{etag}/{format}?{filename}": {
       "get": {
         "tags": [
           "Administrative"
@@ -2154,7 +2157,7 @@
         }
       }
     },
-    "/{substances}/export/scrubber/@schema": {
+    "/api/v1/{substances}/export/scrubber/@schema": {
       "get": {
         "tags": [
           "Administrative"
@@ -2177,7 +2180,7 @@
         }
       }
     },
-    "/{substances}/export/expander/@schema": {
+    "/api/v1/{substances}/export/expander/@schema": {
       "get": {
         "tags": [
           "Administrative"
@@ -2199,7 +2202,7 @@
         }
       }
     },
-    "/{substances}/export/configs": {
+    "/api/v1/{substances}/export/configs": {
       "get": {
         "tags": [
           "Administrative"
@@ -2221,7 +2224,7 @@
         }
       }
     },
-    "/{substances}/export/config/{id}": {
+    "/api/v1/{substances}/export/config/{id}": {
       "get": {
         "tags": [
           "Administrative"
@@ -2286,7 +2289,7 @@
         }
       }
     },
-    "/{substances}/export/config": {
+    "/api/v1/{substances}/export/config": {
       "post": {
         "tags": [
           "Administrative"
@@ -2308,7 +2311,7 @@
         }
       }
 	},
-    "/profile/downloads": {
+    "/api/v1/profile/downloads": {
       "get": {
         "tags": [
           "Administrative"
@@ -2335,7 +2338,7 @@
         }
       }
     },
-    "/profile/downloads/{id}": {
+    "/api/v1/profile/downloads/{id}": {
       "get": {
         "tags": [
           "Administrative"
@@ -2350,8 +2353,17 @@
             "description": "The ID of the export process. Found in the response of the /export/{etag} call",
             "type": "string",
             "in": "path",
-            "required": "true"}
+            "required": "true"},
+          {
+            "in": "path",
+            "name": "context",
+            "description": "Use example for this server. The service context is different from the entity context. The service is typically equal the value of application.name in the service configuration or the folder in gsrs3-main-deployment where the service CI code lives.",
+            "type": "string",
+            "schema": ["json", "text"]
+          }
+
         ],
+
         "responses": {
           "200": {
             "description": "Successful response"
@@ -2361,6 +2373,206 @@
           }
         }
       }
+    },
+    "/service-info/api/v1/{context}/@configurationProperties": {
+      "get": {
+        "tags": [
+          "service info"
+        ],
+        "summary": "Get a service's properties.",
+        "description": "Lists the service's final Java properties after HOCON has been processed. Note that a service here is not an entity, though the service may or may not have an entity by the same name. This endpoint must be enabled for a given service {context}. For entity services, user must be logged in and have an 'admin' role.",
+        "consumes": [ ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "context",
+            "description": "Use 'substances' for this server.",
+            "type": "string",
+            "default": "substances"
+          },
+          {
+            "in": "query",
+            "name": "fmt",
+            "description": "Json or text response format.",
+            "type": "string",
+            "schema": ["json", "text"],
+            "default": "text"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+         "403": {
+            "description": "Not enabled"
+          }          
+        }
+      }
+    },
+    "/service-info/api/v1/{context}/@logConfigurationProperties": {
+      "get": {
+        "tags": [
+          "service info"
+        ],
+        "summary": "Get a service's properties and print to the log. Printing to the log can be a more secure option.",
+        "description": "Lists the service's final Java properties after HOCON has been processed. Note that a service here is not an entity, though the service may or may not have an entity by the same name. This endpoint must be enabled for a given service {context}. For entity services, user must be logged in and have an 'admin' role.",
+        "consumes": [ ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "context",
+            "description": "Use 'substances' for this server.",
+            "type": "string",
+            "default": "substances"
+          },
+          {
+            "in": "query",
+            "name": "fmt",
+            "description": "Json or text response format.",
+            "type": "string",
+            "schema": ["json", "text"],
+            "default": "text"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+         "403": {
+            "description": "Not enabled"
+          }          
+        }
+      }
+    },  
+   "/service-info/api/v1/{context}/actuator/health": {
+      "get": {
+        "tags": [
+          "service info"
+        ],
+        "parameters": [
+        {
+            "in": "path",
+            "name": "context",
+            "description": "Use 'substances' for this server.",
+            "type": "string",
+            "default": "substances"
+          }
+        ],
+        "summary": "Access the SpringBoot actuator for the service {context}. Example 'substances' service context and 'health' actuator endpoint.",
+        "description": "GSRS Gateway friendly way to access Actuator routes. The actuator path and available endpoints are configured for each service.",
+        "consumes": [ ],
+         "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+  "/service-info/api/v1/{serviceContext}/@indexValueMakerConfigs": {
+    "get": {
+      "tags": [
+        "service info"
+      ],
+      "summary": "Get a list of index value maker configuration objects active for a given service.",
+      "description": "Extensions such as validators, processors, indexers operate in sequence over entity data submitted to the GSRS. Enabled extensions run when JSON is submitted to the API. The configuration allows GSRS administrators to enable the extensions and specify parameters that control order of execution, and behavior. Indexer configuration objects are grouped together in one big list for a service.  Therefore, to get information about configured indexers, the endpoint only requires a URL path parameter for the serviceContext.",
+      "consumes": [ ],
+      "parameters": [
+        {
+          "in": "path",
+          "name": "serviceContext",
+          "description": "Use 'substances' for this server.",
+          "type": "string",
+          "default": "substances"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful response"
+        },
+        "401": {
+          "description": "Unauthorized"
+        },
+        "403": {
+          "description": "Not enabled"
+        }          
+      }
     }
+  },
+  "/service-info/api/v1/{serviceContext}/@entityProcessorConfigs": {
+    "get": {
+      "tags": [
+        "service info"
+      ],
+      "summary": "Get a list of entity processor configuration objects active for a given service.",
+      "description": "Extensions such as validators, processors, indexers operate in sequence over entity data submitted to the GSRS. Enabled extensions run when JSON is submitted to the API. The configuration allows GSRS administrators to enable the extensions and specify parameters that control order of execution, and behavior. Entity processor configuration objects are grouped together in one big list for a service.  Therefore, to get information about configured entity processors, the endpoint only requires a URL a path parameter for the serviceContext.",
+      "consumes": [ ],
+      "parameters": [
+        {
+          "in": "path",
+          "name": "serviceContext",
+          "description": "Use 'substances' for this server.",
+          "type": "string",
+          "default": "substances"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful response"
+        },
+        "401": {
+          "description": "No user present"
+        },
+        "404": {
+          "description": "Not enabled"
+        }          
+      }
+    }
+  },   
+
+  "/service-info/api/v1/{serviceContext}/@validatorConfigs/{entityContext}": {
+    "get": {
+      "tags": [
+        "service info"
+      ],
+      "summary": "Get a list of validator configuration objects active for a given service and given entity ",
+      "description": "Extensions such as validators, processors, indexers operate in sequence over entity data submitted to the GSRS. Enabled extensions run when JSON is submitted to the API. The configuration allows GSRS admins to enable the extensions and specify parameters that control order of execution and behavior. In the case of validators, each entity type that exists in a given service has its own set of validators. Therefore, to get information about configured validators, the endpoint requires URL path parameters for both serviceContext and entityContext.",
+      "consumes": [ ],
+      "parameters": [
+      {
+          "in": "path",
+          "name": "serviceContext",
+          "description": "Use 'substances' for this server.",
+          "type": "string",
+          "default": "substances"
+        },
+        {
+          "in": "path",
+          "name": "entityContext",
+          "description": "Use 'substances' for this server.",
+          "type": "string",
+          "default": "substances"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful response"
+        },
+        "401": {
+          "description": "No user present"
+        },
+        "404": {
+          "description": "Not enabled"
+        }          
+      }
+    }
+  }
+ 
+
   }
 }

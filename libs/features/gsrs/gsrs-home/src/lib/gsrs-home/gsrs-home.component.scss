@@ -139,12 +139,27 @@
   }
 
   @media only screen and (max-width: 1000px) {
+    .primary-background {
+      height: 100%;
+      margin-top: clamp(250px, calc(1rem + 5vw), 80px);    
+    } 
     .rdas-subheadline {
       font-size: 1.2rem;
     }
   }
 
-  @media only screen and (max-width: 850px) {
+  @media only screen and (max-width: 800px) {
+    .primary-background {
+      height: 100%;
+      margin-top: clamp(400px, calc(1rem + 8vw), 80px);    
+    } 
+  }
+  @media only screen and (max-width: 700px) {
+    .primary-background {
+      height: 100%;
+      padding: 20px;
+    } 
+
     .rdas-subheadline {
       font-size: 1.2rem;
     
@@ -204,8 +219,10 @@
       height: 65vh;
     }
 }
-
-
+.primary-background {
+      height: 100%;
+      margin-top: clamp(60px, calc(1rem + 5vw), 50px);    
+}
 .primary-background {
   background-color: mat.get-color-from-palette($app-primary);
   color: #ffffff;

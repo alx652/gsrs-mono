@@ -1,33 +1,34 @@
-
-
+<!-- __gsrs_menu__ -->
 
       <div class="content-wrapper" #contentWrapper cdkScrollable>
         <mat-sidenav-container class="mobile-menu-container">
           <header>
             @if (mobile) {
-      
-            <ncats-frontend-library-mobile-header-template [links]="links" #appHeader>
-              <div class="left-options">
-                <a routerLink="/">
-                  <picture>
-                    <source
-                      srcset="assets/gsrs-logo.svg"
-                      type="image/svg"
-                    />
-                    <img
-                      src="assets/gsrs-logo.svg"
-                    alt="Global Substance Registration System"
-                      class="rdas-logo"
-                    />
-                  </picture>
-                </a>
+                <div class="mobile-header">
+                  <ncats-frontend-library-mobile-header-template [links]="links" #appHeader>
+                      <div class="icon">
+                        <a routerLink="/">
+                            <picture>
+                              <source
+                                srcset="assets/gsrs-logo.svg"
+                                type="image/svg"
+                              />
+                              <img
+                                src="assets/gsrs-logo.svg"
+                                alt="Global Substance Registration System"
+                                class="rdas-logo"
+                                title="GSRS landing page"
+                              />
+                            </picture>
+                          </a>
+                      </div>
+                      <div class="left-options"></div>
+                      <div class="right-options"></div>
+                  </ncats-frontend-library-mobile-header-template>
                 </div>
-              <div class="right-options">
-              </div>
-            </ncats-frontend-library-mobile-header-template>
-      
-            } @else {
-      
+              } @else {
+     <div class="wide-header"> 
+
             <ncats-frontend-library-header-template [links]="links">
               <div class="left-options">
                 <a routerLink="/">
@@ -38,22 +39,23 @@
                     />
                     <img
                       src="assets/gsrs-logo.svg"
-                    alt="Global Substance Registration System"
+                      alt="Global Substance Registration System"
                       class="rdas-logo"
+                      title="GSRS landing page"
                     />
                   </picture>
                 </a>
-                </div>
+              </div>
               <div class="right-options">
               </div>
             </ncats-frontend-library-header-template>
+
+          </div>
       
             }
       
             <!-- Custom content -->
       
-            <!--
-      -->
           </header>
           <main role="main">
             <div class="main-content" (click)="closeSidenav()">
@@ -84,4 +86,3 @@
           </footer>
         </mat-sidenav-container>
       </div>
-      

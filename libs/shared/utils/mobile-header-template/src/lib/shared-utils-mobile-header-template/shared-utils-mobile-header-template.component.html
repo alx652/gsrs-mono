@@ -7,7 +7,7 @@
       [disableClose]="false"
       [fixedInViewport]="true"
     >
-      <ng-content select="[left-options]"></ng-content>
+      <ng-content select=".left-options"></ng-content>
       @for (link of links; track link) {
       <div>
         @if (link.children) {
@@ -54,7 +54,7 @@
     </mat-sidenav>
 
     <mat-toolbar class="toolbar-template" [@slideInOut]="animationState">
-      <ng-content select="[icon]"></ng-content>
+      <ng-content select=".icon"></ng-content>
 
       <button
         [color]="'primary'"

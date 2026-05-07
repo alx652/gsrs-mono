@@ -13,7 +13,6 @@ a:visited {
   color: mat.get-color-from-palette($app-accent);
 }
 
-
 .content-wrapper {
   min-height: 100%;
   display: grid;
@@ -152,19 +151,26 @@ img.rdas-footer-logo {
   stroke: mat.get-color-from-palette($app-accent);
 }
 
-@media only screen and (max-width: 768px) {
-  .main-content {
-    padding-top: 55px;
-  }
-
-  img.rdas-footer-logo {
-    height: 6rem;
-  }
-}
-
 .header-link-button {
   padding-left: 20px !important;
   padding-right: 20px !important;
 }
 
+@media only screen and (max-width: 768px) {
+  img.rdas-logo {
+    height: 1.5rem
+  }
 
+  img.rdas-footer-logo {
+    height: 4rem;
+  }
+
+  .main-content {
+    padding-top: 55px;
+  }
+
+  .header-link-button {
+    padding-left: 7px !important;
+    padding-right: 7px !important;
+  }
+}

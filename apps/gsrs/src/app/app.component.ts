@@ -17,7 +17,8 @@ import { CdkScrollable, CdkScrollableModule, ScrollingModule } from '@angular/cd
 import { LoadingSpinnerComponent } from '@ncats-frontend-library/shared/utils/loading-spinner';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { ChangeDetectorRef } from '@angular/core';
 
 
 @Component({
@@ -51,39 +52,63 @@ export class AppComponent {
    */
   @ViewChild(MobileHeaderTemplateComponent, { static: false })
   header!: MobileHeaderTemplateComponent;
-  
+
   title = 'gsrs';
   loaded = false;
   hideSearch = false;
   mobile = false;
   activeLink!: string;
   links: LinkTemplateProperty[] = [
-    {
-      link: '/ginas/app/ui/',
-      label: 'Try GSRS',
-      external: true
-    },
-    {
-      link: 'api-documentation',
-      label: 'API / DOCUMENTATION',
-    },
-    {
-      link: 'about',
-      label: 'ABOUT',
-    },
-    {
-      link: 'downloads',
-      label: 'DOWNLOADS',
-    },
-    // {
-    //   link: 'privacy',
-    //   label: 'PRIVACY',
-    // },
-    // {
-    //   link: 'licensing',
-    //   label: 'LICENSING',
-    // }
-  ];
+      {
+        link: '/ginas/app/ui/',
+        label: 'Try GSRS',
+        external: true,
+        title: 'Try the GSRS application with a public data set'
+      },
+      {
+        link: 'api-documentation',
+        label: 'API / Documentation',
+        title: 'API documentation'
+      },
+      {
+        link: 'about',
+        label: 'ABOUT',
+        title: 'Learn about the GSRS project',
+        class: 'wide-view-menu-item'
+      },
+      {
+        link: 'downloads',
+        label: 'DOWNLOADS',
+        title: 'Download code, data and other resources'
+      }
+   ];
+
+    constructor(
+      private breakpointObserver: BreakpointObserver,
+      private changeDetectorRef: ChangeDetectorRef) {
+    }
+
+    ngOnInit() {
+     this.breakpointObserver.observe([
+       '(max-width: 768px)', '(min-width: 769px)', Breakpoints.Handset
+      // ,
+      // Breakpoints.Web
+    ]).subscribe(result => {
+      if (result.matches) {
+        if (result.breakpoints[Breakpoints.Handset]) {
+        }
+        if (result.breakpoints['(max-width: 768px)']) {
+          this.mobile=true;
+          this.changeDetectorRef.detectChanges();
+        }
+        if (result.breakpoints['(min-width: 769px)']) {
+          this.mobile=false;
+          this.changeDetectorRef.detectChanges();
+        }
+      }
+
+    });
+  }
 
   closeSidenav() {
     if (this.header) {
@@ -97,4 +122,3 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes, withEnabledBlockingInitialNavigation()),
   ],
 };
-
